@@ -1,75 +1,13 @@
-<!--<md-input-container>-->
-<!--<input md-input placeholder="Search" value="Search">-->
-<!--</md-input-container>-->
-<!--<md-chip-list>-->
-<!--<md-chip color="accent" selected="true">Home</md-chip>-->
-<!--<md-chip>Song</md-chip>-->
-<!--<md-chip>Video</md-chip>-->
-<!--<md-chip>Album</md-chip>-->
-<!--<md-chip>Charts</md-chip>-->
-<!--<md-chip>Radio</md-chip>-->
-<!--<md-chip>Singer</md-chip>-->
-<!--</md-chip-list>-->
-
-<!--<md-grid-list cols="12">-->
-<!--<md-tab-group>-->
-<!--<md-tab *ngFor="let flash of flashHots" label="{{flash.title}}">-->
-<!--<a href="{{flash.link}}">-->
-<!--<img class="img-responsive" src="{{imagePatch}}{{flash.image_path}}" alt="{{flash.title}}">-->
-<!--</a>-->
-<!--</md-tab>-->
-<!--</md-tab-group>-->
-<!--</md-grid-list>-->
-
-<!--<md-grid-list cols="12">-->
-<!--<md-grid-tile colspan="4" rowspan="20">-->
-<!--<md-list style="background: seagreen">-->
-<!--<md-list-item *ngFor="let chart of charts">-->
-<!--<img class="img-responsive" width="50px" src="{{imagePatch + chart.image_path}}" alt="">-->
-<!--<h4 md-line>{{chart.name}}</h4>-->
-<!--<p md-line> {{chart.listen_no}} </p>-->
-<!--</md-list-item>-->
-<!--</md-list>-->
-<!--</md-grid-tile>-->
-<!--</md-grid-list>-->
 <div class="container">
   <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-sm-8">
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="9"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item " *ngFor="let flash of flashHots">
-            <img class="img-responsive" src="{{imagePatch + flash.image_path}}" alt="{{flash.title}}">
-            <div class="carousel-caption">
-              {{flash.title}}
-            </div>
-            {{flash.title}}
+      <carousel>
+        <slide *ngFor="let flash of flashHots">
+          <img style="width: 100%" class="img-responsive" src="{{imagePatch + flash.image_path}}" alt="{{flash.title}}">
+          <div class="carousel-caption">
           </div>
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
+        </slide>
+      </carousel>
       <div class="row">
         <div class="col-md-6">
           <div class="thumbnail">
@@ -81,7 +19,6 @@
         <div class="col-md-6">
           <h5><strong>{{firstFeeling['title']}}</strong></h5>
           <p>{{firstFeeling['header']}}</p>
-
           <p *ngFor="let feeling of feelings| slice:1:4">
             <a href="">
               <h5>{{feeling.title| slice:0:44}}</h5>
@@ -89,48 +26,57 @@
           </p>
         </div>
       </div>
-
       <div class="row">
-        Hot
-        <div class="col-lg-6" *ngFor="let playlish of playlistHots">
-          <div class="col-lg-12">
-            <div class="thumbnail">
-              <img class="img-responsive" src="{{imagePatch + playlish['album'].image_path}}" alt="...">
-              <div class="caption">
-                <h5>{{playlish['album'].name}}</h5>
-                <p>
-
-                </p>
+        <div class="col-lg-12">
+          <li class="list-group-item active"><strong>Hot Music</strong></li>
+        </div>
+        <div class="row">
+          <div class="col-lg-6" *ngFor="let playlish of playlistHots">
+            <div class="col-lg-12">
+              <div class="thumbnail">
+                <img class="img-responsive" src="{{imagePatch + playlish['album'].image_album}}" alt="...">
+                <div class="caption">
+                  <h5><strong>{{playlish['album'].name}}</strong></h5>
+                  <p>{{playlish['song'].singer_name}}</p>
+                  <p>
+                    <i class="glyphicon glyphicon-headphones"></i> {{playlish['album'].listen_no}}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="thumbnail">
-              <audio controls preload="none">
-                <source src="{{audioPatch + playlish['song'].path}}" type="audio/mpeg" >
-              </audio>
-              <div class="caption">
-                <h5>{{playlish['song'].name}}</h5>
-                <p>
-                </p>
+            <div class="col-lg-12">
+              <div class="thumbnail">
+                <img src="{{imagePatch + playlish['song'].image_path}}" alt="{{playlish['song'].name}}">
+                <audio controls preload="none">
+                  <source src="{{audioPatch + playlish['song'].path}}" type="audio/mpeg" >
+                </audio>
+                <div class="caption">
+                  <h5><strong>{{playlish['song'].name}}</strong></h5>
+                  <p>{{playlish['song'].singer_name}}</p>
+                  <p>
+                    <i class="glyphicon glyphicon-headphones"></i> {{playlish['song'].listen_no}}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="thumbnail">
-              <video width="320" height="240" class="image-response" controls preload="none">
-                <source src="{{videoPatch + playlish['video'].path}}" type="video/mp4">
-              </video>
-              <div class="caption">
-                <h5>{{playlish['video'].name}}</h5>
-                <p>
-                </p>
+            <div class="col-lg-12">
+              <div class="thumbnail">
+                <img src="{{imagePatch + playlish['video'].image_path}}" alt="">
+                <video width="320" height="240" class="image-response" controls preload="none">
+                  <source src="{{videoPatch + playlish['video'].path}}" type="video/mp4">
+                </video>
+                <div class="caption">
+                  <h5><strong>{{playlish['video'].name}}</strong></h5>
+                  <p>{{playlish['song'].singer_name}}</p>
+                  <p>
+                    <i class="glyphicon glyphicon-headphones"></i> {{playlish['video'].listen_no}}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-6">
           <div class="thumbnail">
@@ -149,12 +95,10 @@
           </p>
         </div>
       </div>
-
     </div><!--/.col-xs-12.col-sm-9-->
-
     <div class="col-sm-4 sidebar-offcanvas" id="sidebar">
       <div class="list-group">
-        <li class="list-group-item">Charts</li>
+        <li class="list-group-item active"><strong>Charts</strong></li>
         <li href="#" *ngFor="let chart of charts| slice:0:5" class="list-group-item">
           <div class="row">
             <div class="col-lg-4">
@@ -169,7 +113,7 @@
         </li>
       </div><!--/.sidebar-offcanvas-->
       <div class="list-group">
-        <li class="list-group-item">Topic</li>
+        <li class="list-group-item active"><strong>Topic</strong></li>
         <li href="#" *ngFor="let topic of topics| slice:0:5" class="list-group-item">
           <div class="row">
             <div class="col-lg-4">
@@ -182,15 +126,13 @@
         </li>
       </div><!--/.sidebar-offcanvas-->
       <div class="list-group">
-        <a class="list-group-item">Category</a>
-        <a href="#" *ngFor="let topic of topics| slice:0:5" class="list-group-item">{{topic.name}}</a>
+        <a class="list-group-item active"><strong>Category</strong></a>
+        <a href="#" *ngFor="let category of categories" class="list-group-item">{{category.name}}</a>
       </div><!--/.sidebar-offcanvas-->
     </div><!--/row-->
-
-
-      <footer>
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <footer>
+      <p>&copy; 2016 Company, Inc.</p>
+    </footer>
   </div>
 </div>
+

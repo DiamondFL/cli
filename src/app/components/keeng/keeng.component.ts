@@ -18,24 +18,37 @@ export class KeengComponent implements OnInit {
   audioPatch: string = "http://cdn1.keeng.net/bucket-audio-keeng";
   firstBlog: any = {};
   firstFeeling: any = {};
+  categories: any[] = [];
   constructor(
     private keengService: KeengService
   ) { }
-//playlistHots
   ngOnInit() {
     this.keengService.index().then(data => {
       this.flashHots = data.flashs;
       this.charts = data.rankingvn;
+      for(let i in this.charts) {    ;
+        if(this.charts[i].image_path == null) {
+          let singer_images: string[] = this.charts[i].singer_image.split("$");
+          this.charts[i].image_path = singer_images[1];
+        }
+      }
       this.topics = data.topics;
-
       this.blogs = data.blogs;
       this.firstBlog = this.blogs[0];
       this.playlistHots = data.playlistHots;
+      for(let i in this.playlistHots) {
+        for(let j in this.playlistHots[i]) {
+          if(this.playlistHots[i][j].image_path == null) {
+            this.playlistHots[i][j].image_path = this.playlistHots[i][j].singer_image;
+          }
+        }
+      }
       this.feelings = data.feelings;
       this.firstFeeling = data.feelings[0];
-      console.log(data);
-      console.log(this.firstBlog);
-    })
+    });
+    this.keengService.common().then(data => {
+      this.categories = data.categories;
+    });
   }
 
 }

@@ -19,4 +19,11 @@ export class KeengService {
       .then(res => res.json())
       .catch(this.handleError)
   }
+  common() {
+    let url = 'http://api.keeng.vn/v1/public/home/commondata';
+    return this.http.get(url)
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
 }
