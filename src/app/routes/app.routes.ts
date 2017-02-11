@@ -11,7 +11,7 @@ import {KeengComponent} from "../components/keeng/keeng.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/keeng',
     pathMatch: 'full'
   },
   {
