@@ -24,6 +24,7 @@ export class KeengComponent implements OnInit {
   ) { }
   ngOnInit() {
     this.keengService.index().then(data => {
+      console.log(data);
       this.flashHots = data.flashs;
       this.charts = data.rankingvn;
       for(let i in this.charts) {    ;
@@ -47,6 +48,7 @@ export class KeengComponent implements OnInit {
       this.firstFeeling = data.feelings[0];
     });
     this.keengService.common().then(data => {
+      console.log(data);
       this.categories = data.categories;
     });
   }
