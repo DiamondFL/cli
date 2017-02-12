@@ -29,7 +29,7 @@ export class KeengComponent implements OnInit {
       for(let i in this.charts) {    ;
         if(this.charts[i].image_path == null) {
           let singer_images: string[] = this.charts[i].singer_image.split("$");
-          this.charts[i].image_path = singer_images[1];
+          this.charts[i].image_path = singer_images[0];
         }
       }
       this.topics = data.topics;
