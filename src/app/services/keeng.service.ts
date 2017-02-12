@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 export class KeengService {
   private headers = new Headers({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'http://api.keeng.vn',
     'Access-Control-Allow-Methods': '*',
     'Access-Control-Allow-Headers': '*',
     'Access-Control-Allow-Credentials': true
