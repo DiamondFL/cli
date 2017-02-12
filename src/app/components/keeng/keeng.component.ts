@@ -7,7 +7,7 @@ import {KeengService} from "../../services/keeng.service";
   styleUrls: ['./keeng.component.css']
 })
 export class KeengComponent implements OnInit {
-  flashHots: any[] = [];
+  flashHots: any[] = null;
   blogs: any[] = [];
   feelings: any[] = [];
   playlistHots: any[] = [];

@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {Http} from "@angular/http";
 import {Singer} from "../database/entities/singer";
+import {BASE_URL} from "../configs/app.config";
 @Injectable()
 export class SingerService {
-  private url = 'api/singers';
+  private url = BASE_URL + 'singers';
   constructor(private http:Http) { }
 
   private handleError(error: any): Promise<any> {
