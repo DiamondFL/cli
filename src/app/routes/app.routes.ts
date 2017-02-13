@@ -11,7 +11,7 @@ import {KeengComponent} from "../components/keeng/keeng.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/keeng',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -35,5 +35,5 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class AppRoutingMoudle {}
+export class AppRoutingModule {}
 // export const appRoutes = RouterModule.forRoot(routes);

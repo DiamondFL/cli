@@ -9,7 +9,7 @@ import {ForcePipe} from './pipes/force.pipe';
 import {HeroDetailComponent} from './components/hero-detail/hero-detail.component';
 import {HeroService} from "./services/hero.service";
 import {HeroComponent} from './components/hero/hero.component';
-import {AppRoutingMoudle} from "./routes/app.routes";
+// import {AppRoutingModule} from "./routes/app.routes";
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 //import {InMemoryDataService} from "./services/in-memory-data.service";
@@ -20,7 +20,6 @@ import {SingerService} from "./services/singer.service";
 import 'hammerjs';
 import { KeengComponent } from './components/keeng/keeng.component';
 import {KeengService} from "./services/keeng.service";
-
 import { CarouselModule } from 'ng2-bootstrap';
 import {AlertModule} from "ng2-bootstrap";
 import { PlayerComponent } from './components/player/player.component';
@@ -29,7 +28,6 @@ import { PlayerChartsComponent } from './components/player-charts/player-charts.
 import { PlayerLivetvComponent } from './components/player-livetv/player-livetv.component';
 import { PlayerRadioComponent } from './components/player-radio/player-radio.component';
 import { PlayerVideoComponent } from './components/player-video/player-video.component';
-import { PopupLogComponent } from './components/popup-log/popup-log.component';
 import { PopupLoginComponent } from './components/popup-login/popup-login.component';
 import { AlbumComponent } from './components/album/album.component';
 import { SongComponent } from './components/song/song.component';
@@ -38,10 +36,10 @@ import { TopicDetailComponent } from './components/topic-detail/topic-detail.com
 import { HomeComponent } from './components/home/home.component';
 import { TopicComponent } from './components/topic/topic.component';
 import { ListSongComponent } from './components/list-song/list-song.component';
-import { SingersComponent } from './components/singers/singers.component';
 import { SingerDetailComponent } from './components/singer-detail/singer-detail.component';
-import { CateogryComponent } from './components/cateogry/cateogry.component';
 import { ListVideoComponent } from './components/list-video/list-video.component';
+import {KeengRoutingModule} from "./routes/keeng.routes";
+import { CategoryComponent } from './components/category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +58,6 @@ import { ListVideoComponent } from './components/list-video/list-video.component
     PlayerLivetvComponent,
     PlayerRadioComponent,
     PlayerVideoComponent,
-    PopupLogComponent,
     PopupLoginComponent,
     AlbumComponent,
     SongComponent,
@@ -69,21 +66,21 @@ import { ListVideoComponent } from './components/list-video/list-video.component
     HomeComponent,
     TopicComponent,
     ListSongComponent,
-    SingersComponent,
     SingerDetailComponent,
-    CateogryComponent,
     ListSongComponent,
-    ListVideoComponent
+    ListVideoComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingMoudle,
+    // AppRoutingModule,
     // InMemoryWebApiModule.forRoot(InMemoryDataService),
     //MaterialModule.forRoot(),
     AlertModule.forRoot(),
     CarouselModule.forRoot(),
+    KeengRoutingModule
   ],
   providers: [HeroService, HeroSearchService, SingerService, KeengService],
   bootstrap: [AppComponent]
