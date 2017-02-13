@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {KeengService} from "../../services/keeng.service";
+import {ALL_DATA, COMMON} from "../../database/seeds/home";
 
 @Component({
   selector: 'app-keeng',
@@ -23,34 +24,57 @@ export class KeengComponent implements OnInit {
     private keengService: KeengService
   ) { }
   ngOnInit() {
-    this.keengService.index().then(data => {
-      console.log(data);
-      this.flashHots = data.flashs;
-      this.charts = data.rankingvn;
-      for(let i in this.charts) {    ;
-        if(this.charts[i].image_path == null) {
-          let singer_images: string[] = this.charts[i].singer_image.split("$");
-          this.charts[i].image_path = singer_images[0];
+    // this.keengService.index().then(data => {
+    //   this.flashHots = data.flashs;
+    //   this.charts = data.rankingvn;
+    //   for(let i in this.charts) {    ;
+    //     if(this.charts[i].image_path == null) {
+    //       let singer_images: string[] = this.charts[i].singer_image.split("$");
+    //       this.charts[i].image_path = singer_images[0];
+    //     }
+    //   }
+    //   this.topics = data.topics;
+    //   this.blogs = data.blogs;
+    //   this.firstBlog = this.blogs[0];
+    //   this.playlistHots = data.playlistHots;
+    //   for(let i in this.playlistHots) {
+    //     for(let j in this.playlistHots[i]) {
+    //       if(this.playlistHots[i][j].image_path == null) {
+    //         this.playlistHots[i][j].image_path = this.playlistHots[i][j].singer_image;
+    //       }
+    //     }
+    //   }
+    //   this.feelings = data.feelings;
+    //   this.firstFeeling = data.feelings[0];
+    // });
+    // this.keengService.common().then(data => {
+    //   console.log(data);
+    //   this.categories = data.categories;
+    // });
+
+    this.flashHots = ALL_DATA.flashs;
+    this.charts = ALL_DATA.rankingvn;
+    for(let i in this.charts) {
+      if(this.charts[i].image_path == null) {
+        let singer_images: string[] = this.charts[i].singer_image.split("$");
+        this.charts[i].image_path = singer_images[0];
+      }
+    }
+    this.topics = ALL_DATA.topics;
+    this.blogs = ALL_DATA.blogs;
+    this.firstBlog = this.blogs[0];
+    this.playlistHots = ALL_DATA.playlistHots;
+    for(let i in this.playlistHots) {
+      for(let j in this.playlistHots[i]) {
+        if(this.playlistHots[i][j].image_path == null) {
+          this.playlistHots[i][j].image_path = this.playlistHots[i][j].singer_image;
         }
       }
-      this.topics = data.topics;
-      this.blogs = data.blogs;
-      this.firstBlog = this.blogs[0];
-      this.playlistHots = data.playlistHots;
-      for(let i in this.playlistHots) {
-        for(let j in this.playlistHots[i]) {
-          if(this.playlistHots[i][j].image_path == null) {
-            this.playlistHots[i][j].image_path = this.playlistHots[i][j].singer_image;
-          }
-        }
-      }
-      this.feelings = data.feelings;
-      this.firstFeeling = data.feelings[0];
-    });
-    this.keengService.common().then(data => {
-      console.log(data);
-      this.categories = data.categories;
-    });
+    }
+    this.feelings = ALL_DATA.feelings;
+    this.firstFeeling = ALL_DATA.feelings[0];
+
+    this.categories = COMMON.categories;
   }
 
 }

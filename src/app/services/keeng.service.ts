@@ -15,7 +15,6 @@ export class KeengService {
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
-
   }
   index() {
     let url = 'http://api.keeng.vn/v1/public/home/alldata';
