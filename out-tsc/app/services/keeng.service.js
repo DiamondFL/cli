@@ -25,20 +25,6 @@ export var KeengService = (function () {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    KeengService.prototype.index = function () {
-        var url = 'http://api.keeng.vn/v1/public/home/alldata';
-        return this.http.get(url, { headers: this.headers })
-            .toPromise()
-            .then(function (res) { return res.json(); })
-            .catch(this.handleError);
-    };
-    KeengService.prototype.common = function () {
-        var url = 'http://api.keeng.vn/v1/public/home/commondata';
-        return this.http.get(url, { headers: this.headers })
-            .toPromise()
-            .then(function (res) { return res.json(); })
-            .catch(this.handleError);
-    };
     KeengService = __decorate([
         Injectable(), 
         __metadata('design:paramtypes', [Http])
