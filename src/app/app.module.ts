@@ -23,6 +23,25 @@ import {KeengService} from "./services/keeng.service";
 
 import { CarouselModule } from 'ng2-bootstrap';
 import {AlertModule} from "ng2-bootstrap";
+import { PlayerComponent } from './components/player/player.component';
+import { PlayerAlbumComponent } from './components/player-album/player-album.component';
+import { PlayerChartsComponent } from './components/player-charts/player-charts.component';
+import { PlayerLivetvComponent } from './components/player-livetv/player-livetv.component';
+import { PlayerRadioComponent } from './components/player-radio/player-radio.component';
+import { PlayerVideoComponent } from './components/player-video/player-video.component';
+import { PopupLogComponent } from './components/popup-log/popup-log.component';
+import { PopupLoginComponent } from './components/popup-login/popup-login.component';
+import { AlbumComponent } from './components/album/album.component';
+import { SongComponent } from './components/song/song.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
+import { HomeComponent } from './components/home/home.component';
+import { TopicComponent } from './components/topic/topic.component';
+import { ListSongComponent } from './components/list-song/list-song.component';
+import { SingersComponent } from './components/singers/singers.component';
+import { SingerDetailComponent } from './components/singer-detail/singer-detail.component';
+import { CateogryComponent } from './components/cateogry/cateogry.component';
+import { ListVideoComponent } from './components/list-video/list-video.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +53,27 @@ import {AlertModule} from "ng2-bootstrap";
     DashboardComponent,
     HeroSearchComponent,
     HeroSearchComponent,
-    KeengComponent
+    KeengComponent,
+    PlayerComponent,
+    PlayerAlbumComponent,
+    PlayerChartsComponent,
+    PlayerLivetvComponent,
+    PlayerRadioComponent,
+    PlayerVideoComponent,
+    PopupLogComponent,
+    PopupLoginComponent,
+    AlbumComponent,
+    SongComponent,
+    ChartComponent,
+    TopicDetailComponent,
+    HomeComponent,
+    TopicComponent,
+    ListSongComponent,
+    SingersComponent,
+    SingerDetailComponent,
+    CateogryComponent,
+    ListSongComponent,
+    ListVideoComponent
   ],
   imports: [
     BrowserModule,
