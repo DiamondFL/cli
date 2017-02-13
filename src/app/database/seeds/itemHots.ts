@@ -7,19 +7,28 @@ export const ITEM_HOT = [
       id: 1,
       name: 'Duyên Đầu Năm',
       image: 'http://vip.img.cdn.keeng.vn/sata11/video/images/2017/01/17/PlljkypRAOZNfNo6nZta587d7f3dac8e9.jpg',
-      singer_name: 'Nhật Kim Anh'
+      singer_name: 'Nhật Kim Anh',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     },
     album: {
       id: 1,
       name: 'Tết Này Con Sẽ Về',
       image: 'http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2017/01/25/FAlt66g73nTujeTpu1LK588816820bbec_103_103.jpg',
-      singer_name: 'Chi Dân'
+      singer_name: 'Chi Dân',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     },
     song: {
       id: 1,
       name: 'Bao Giờ Lấy Chồng',
-      image: 'http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html?src=hot',
-      singer_name: 'Bích Phương'
+      image: 'http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/song/images/2017/02/07/xDYvjupOhPQD3oIkQDMV58999bf984030_103_103.jpg',
+      singer_name: 'Bích Phương',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     }
   },
   {
@@ -27,19 +36,28 @@ export const ITEM_HOT = [
       id: 2,
       name: 'Duyên Đầu Năm',
       image: 'http://vip.img.cdn.keeng.vn/sata11/video/images/2017/01/17/PlljkypRAOZNfNo6nZta587d7f3dac8e9.jpg',
-      singer_name: 'Nhật Kim Anh'
+      singer_name: 'Nhật Kim Anh',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     },
     album: {
       id: 2,
       name: 'Tết Này Con Sẽ Về',
       image: 'http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2017/01/25/FAlt66g73nTujeTpu1LK588816820bbec_103_103.jpg',
-      singer_name: 'Chi Dân'
+      singer_name: 'Chi Dân',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     },
     song: {
       id: 2,
       name: 'Bao Giờ Lấy Chồng',
-      image: 'http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html?src=hot',
-      singer_name: 'Bích Phương'
+      image: 'http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/song/images/2017/02/07/xDYvjupOhPQD3oIkQDMV58999bf984030_103_103.jpg',
+      singer_name: 'Bích Phương',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     }
   },
   {
@@ -47,19 +65,28 @@ export const ITEM_HOT = [
       id: 3,
       name: 'Duyên Đầu Năm',
       image: 'http://vip.img.cdn.keeng.vn/sata11/video/images/2017/01/17/PlljkypRAOZNfNo6nZta587d7f3dac8e9.jpg',
-      singer_name: 'Nhật Kim Anh'
+      singer_name: 'Nhật Kim Anh',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     },
     album: {
       id: 3,
       name: 'Tết Này Con Sẽ Về',
       image: 'http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2017/01/25/FAlt66g73nTujeTpu1LK588816820bbec_103_103.jpg',
-      singer_name: 'Chi Dân'
+      singer_name: 'Chi Dân',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     },
     song: {
       id: 3,
       name: 'Bao Giờ Lấy Chồng',
-      image: 'http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html?src=hot',
-      singer_name: 'Bích Phương'
+      image: 'http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/song/images/2017/02/07/xDYvjupOhPQD3oIkQDMV58999bf984030_103_103.jpg',
+      singer_name: 'Bích Phương',
+      like_no: 11111,
+      listen_no: 2222222,
+      comment_no: 333333,
     }
   },
 ];

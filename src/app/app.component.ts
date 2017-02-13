@@ -9,7 +9,7 @@ import {HeroService} from "./services/hero.service";
   providers: [HeroService]
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
 
   // heroes: Hero[];
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     // this.getHeroes();
   }
+
   // onSelect(hero: Hero): void {
   //   console.log(hero);
   //   this.selectedHero = hero;

@@ -1,27 +1,28 @@
 <div id="body">
   <div id="slider_owl_keeng">
-    <div class="slider-owl-keeng"> <a class="slider-owl-item" href="http://m.keeng.vn/audio/Khoc-Bang-Nu-Cuoi-UNI5-320Kbps/WvmpiRmZ.html?src=flash"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/19/48fa76b56a656fa1ca168c3d2c31ab889a1bdb87_640_293.jpg" title="Kh&oacute;c Bằng Nụ Cười - UNI5"/> </a> <a class="slider-owl-item" href="http://m.keeng.vn/video/shake-it-diep-lam-anh-mrt/nmXxJuZx.html?src=flash"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/19/0ee63aace4b25b78e8270c9aa5365a06b6540faf_640_293.jpg" title="Shake It - Diệp L&acirc;m Anh ft Mr.T"/> </a> <a class="slider-owl-item" href="http://m.keeng.vn/audio/Hamlet-Truong-Radio-161:-Dung-Nguoi-Khong-Dung-Luc-320Kbps/MeKKni64.html?src=flash"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/21/74a2d5875b032bb475d8266ae177bc546c58e2f3_640_293.jpg" title="Hamlet Trương Radio 161: Đ&uacute;ng Người Kh&ocirc;ng Đ&uacute;ng L&uacute;c - Hamlet Trương"/> </a> <a class="slider-owl-item" href="http://m.keeng.vn/album/1111-taeyeon-snsd/QPKAFGRV.html?src=flash"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/02/51ceb51894f3879b891f377af4467d507088b8f1_640_293.jpg" title="11:11 - TaeYeon (SNSD)"/> </a> <a class="slider-owl-item" href="http://m.keeng.vn/audio/Yeu-Nguoi-Cung-Gioi-Duong-Nhat-Linh-320Kbps/hWv6KfJg.html?src=flash"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/19/6d82f30098a82525142db359c02064146bbee9f1_640_293.jpg" title="Y&ecirc;u Người C&ugrave;ng Giới - Dương Nhất Linh"/> </a> <a class="slider-owl-item" href="http://m.keeng.vn/audio/Ngay-Tan-The-Cuoc-Tinh-La-Hoang-Phuc-320Kbps/fYIlu2rv.html?src=flash"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/21/72322c0ab4cb10749dfecbc18c9f16fdde17ac34_640_293.jpg" title="Ng&agrave;y Tận Thế Cuộc T&igrave;nh - La Ho&agrave;ng Ph&uacute;c"/> </a> </div>
+    <div class="slider-owl-keeng">
+      <a class="slider-owl-item" href="http://m.keeng.vn/song/Khoc-Bang-Nu-Cuoi-UNI5-320Kbps/WvmpiRmZ.html?src=flash">
+      <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/19/48fa76b56a656fa1ca168c3d2c31ab889a1bdb87_640_293.jpg"
+        title="Kh&oacute;c Bằng Nụ Cười - UNI5"/>
+      </a>
   </div>
   <div class="keeng-album">
     <h2 class="keeng-h2-title"><a>ALBUM HOT</a></h2>
     <div class="keeng-album-wrap">
-
-      <div  *ngFor="let album of albums" class="keeng-album-item">
-        <a class="keeng-album-img"> <img src="{{album.image}}" /> <span class="album-shadow"></span> </a>
+      <div *ngFor="let album of albums" class="keeng-album-item">
+        <a class="keeng-album-img"> <img src="{{album.image}}"/> <span class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>{{album.name}}</a> </h3>
+          <h3 class="album-info-h3"><a>{{album.name}}</a></h3>
           <p class="album-info-singer"><a>{{album.singer_name}}</a></p>
         </div>
       </div>
-
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
   <div class="keeng-propose">
     <h2 class="keeng-h2-title"><a>Nhạc HOT</a></h2>
-    <!-- Neu duoc setting $page thi hien thi 1 blog, nguoc lai hien thi 3 -->
-
-    <div *ngFor="let itemHot of itemHots" id="box-hot" class="keeng-hot-detail" >
+    <div *ngFor="let itemHot of itemHots" id="box-hot" class="keeng-hot-detail">
       <div class="keeng-video">
         <div class="kv-content">
           <a class="kv-lnk">
@@ -37,163 +38,145 @@
               </a>
             </h3>
             <p class="kv-info-p"><a class="kv-info-singer">{{itemHot.video.singer_name}}</a> <span class="kv-info-view">
-                <img src="http://vip.keeng.vn/v3/images/ver3_09.png" height="10"> 357.839</span>
+                <img src="http://vip.keeng.vn/v3/images/ver3_09.png" height="10"> {{itemHot.video.listen_no}}</span>
             </p>
           </div>
         </div>
         <div class="keeng-social">
-          <a class="ks-like" href="" onclick="addFavourite(229498, 'video', this);return false;">THÍCH &nbsp;<span id="keeng-video-like-229498">1212</span> </a>
-          <a class="ks-comment" href="http://m.keeng.vn/video/duyen-dau-nam-nhat-kim-anh/a1L9Hwpc.html#cscx">BÌNH LUẬN &nbsp;<span id="keeng-video-comment-229498">12353</span></a>
+          <a class="ks-like" href="" onclick="addFavourite(229498, 'video', this);return false;">THÍCH &nbsp;<span
+            id="keeng-video-like-229498">{{itemHot.video.like_no}}</span> </a>
+          <a class="ks-comment" href="http://m.keeng.vn/video/duyen-dau-nam-nhat-kim-anh/a1L9Hwpc.html#cscx">BÌNH LUẬN
+            &nbsp;<span id="keeng-video-comment-229498">{{itemHot.video.comment_no}}</span></a>
           <input name="listhot-id" value="video-229498" type="hidden">
-          <!-- <p class="ks-user">
-              <a><img src="assets/images/temp/temp_04.jpg" /> </a>
-              <a><img src="assets/images/temp/temp_05.jpg" /> </a>
-              <a><img src="assets/images/temp/temp_04.jpg" /> </a>
-          </p> -->
         </div>
       </div>
-
       <div class="keeng-album">
         <div class="ka-content">
-          <a class="ka-lnk" href="http://m.keeng.vn/album/tet-nay-con-se-ve-chi-dan/CMxHkFqq.html?src=hot">
-            <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2017/01/25/FAlt66g73nTujeTpu1LK588816820bbec_103_103.jpg" title="Tết Này Con Sẽ Về" alt="Tết Này Con Sẽ Về">
+          <a class="ka-lnk">
+            <img
+              src="{{itemHot.album.image}}"
+              title="{{itemHot.album.name}}">
           </a>
           <div class="ka-info">
             <h3 class="ka-info-h3">
-              <a href="http://m.keeng.vn/album/tet-nay-con-se-ve-chi-dan/CMxHkFqq.html?src=hot">Tết Này Con Sẽ Về</a>
+              <a>{{itemHot.album.name}}</a>
             </h3>
             <p class="ka-info-singer">
-              <a href="http://m.keeng.vn/album/tet-nay-con-se-ve-chi-dan/CMxHkFqq.html?src=hot">
-                Chi Dân
+              <a>
+                {{itemHot.album.singer_name}}
               </a>
             </p>
-            <span class="ka-info-view"><img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">467.071</span>
+            <span class="ka-info-view"><img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.album.listen_no}}</span>
           </div>
         </div>
         <div class="keeng-social">
-          <a class="ks-like" href="" onclick="addFavourite(90676, 'album', this);return false;">THÍCH &nbsp;<span id="keeng-album-like-90676">2323</span> </a>
-          <a class="ks-comment" href="http://m.keeng.vn/album/tet-nay-con-se-ve-chi-dan/CMxHkFqq.html#cscx">BÌNH LUẬN &nbsp;<span id="keeng-album-comment-90676">959</span></a>
+          <a class="ks-like" href="" onclick="addFavourite(90676, 'album', this);return false;">THÍCH &nbsp;<span
+            id="keeng-album-like-90676">{{itemHot.album.like_no}}</span> </a>
+          <a class="ks-comment" href="http://m.keeng.vn/album/tet-nay-con-se-ve-chi-dan/CMxHkFqq.html#cscx">BÌNH LUẬN
+            &nbsp;<span id="keeng-album-comment-90676">{{itemHot.album.comment_no}}</span></a>
           <input name="listhot-id" value="album-90676" type="hidden">
-          <!-- <p class="ks-user">
-              <a><img src="http://vip.keeng.vn/v3/images/temp/temp_04.jpg" /> </a>
-              <a><img src="http://vip.keeng.vn/v3/images/temp/temp_05.jpg" /> </a>
-              <a><img src="http://vip.keeng.vn/v3/images/temp/temp_04.jpg" /> </a>
-          </p> -->
         </div>
       </div>
-
-      <div class="keeng-album keeng-audio">
+      <div class="keeng-song">
         <div class="ka-content">
-          <a class="ka-lnk" href="http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html?src=hot">
-            <img src="http://vip.img.cdn.keeng.vn/sata11/singer/2016/01/29/64527a7a69609f7e2814052d3ab3d7e50a1ce461.jpg" title="Bao Giờ Lấy Chồng" alt="Bao Giờ Lấy Chồng">
+          <a class="ka-lnk">
+            <img src="{{itemHot.song.image}}"
+                 title="Bao Giờ Lấy Chồng" alt="{{itemHot.song.name}}">
           </a>
           <div class="ka-info">
             <h3 class="ka-info-h3">
-              <a href="http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html?src=hot">
+              <a>
                 <span class="sp-exclusive">ĐỘC QUYỀN</span>
-
-                Bao Giờ Lấy Chồng
+                {{itemHot.song.name}}
               </a>
             </h3>
             <p class="ka-info-singer">
-              <a href="http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html?src=hot">
-                Bích Phương
+              <a>
+                {{itemHot.song.singer_name}}
               </a>
               <span class="ka-info-view">
-                    <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">6.072.490
+                    <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.song.listen_no}}
                 </span>
             </p>
           </div>
         </div>
         <div class="keeng-social">
-          <a class="ks-like" href="" onclick="addFavourite(2856400, 'song', this);return false;">THÍCH &nbsp;<span id="keeng-song-like-2856400">6969</span> </a>
-          <a class="ks-comment" href="http://m.keeng.vn/audio/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html#cscx">BÌNH LUẬN &nbsp;<span id="keeng-song-comment-2856400">2385</span></a>
+          <a class="ks-like" href="" onclick="addFavourite(2856400, 'song', this);return false;">THÍCH &nbsp;<span
+            id="keeng-song-like-2856400">{{itemHot.song.like_no}}</span> </a>
+          <a class="ks-comment" href="http://m.keeng.vn/song/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html#cscx">BÌNH
+            LUẬN &nbsp;<span id="keeng-song-comment-2856400">{{itemHot.song.comment_no}}</span></a>
           <input name="listhot-id" value="song-2856400" type="hidden">
-          <!-- <p class="ks-user">
-              <a><img src="http://vip.keeng.vn/v3/images/temp/temp_04.jpg" /> </a>
-              <a><img src="http://vip.keeng.vn/v3/images/temp/temp_05.jpg" /> </a>
-              <a><img src="http://vip.keeng.vn/v3/images/temp/temp_04.jpg" /> </a>
-          </p> -->
         </div>
       </div>
-
       <p class="more-keeng-view" id="blockPlaylistHot_1" style="display: none;">
-        <a href="javascript:displayBoxHot(1);" >
+        <a href="javascript:displayBoxHot(1);">
           <img src="http://vip.keeng.vn/v3/images/ver3_12.png" height="7">
         </a>
       </p>
     </div>
   </div>
-
   <div class="keeng-song">
     <h2 class="keeng-h2-title"><a>BÀI HÁT HOT</a></h2>
     <div class="keeng-song-wrap">
-
-      <div *ngFor="let song of songs" class="keeng-song-item"> <a class="keeng-song-img">
-        <img src="{{song.image}}" /></a>
+      <div *ngFor="let song of songs" class="keeng-song-item"><a class="keeng-song-img">
+        <img src="{{song.image}}"/></a>
         <div class="keeng-song-info">
-          <h3 class="song-info-h3"> <a>{{song.name}}</a> </h3>
+          <h3 class="song-info-h3"><a>{{song.name}}</a></h3>
           <p class="song-info-singer"><a>{{song.singer_name}}</a></p>
         </div>
       </div>
-
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
-
   <div class="keeng-video">
     <h2 class="keeng-h2-title"><a>VIDEO HOT</a></h2>
     <div class="keeng-video-wrap">
-
-      <div *ngFor="let video of videos" class="keeng-video-item"> <a class="keeng-video-img">
-        <img src="{{video.image}}" /> </a>
+      <div *ngFor="let video of videos" class="keeng-video-item"><a class="keeng-video-img">
+        <img src="{{video.image}}"/> </a>
         <div class="keeng-video-info">
-          <h3 class="video-info-h3"> <a>{{video.name}}</a> </h3>
+          <h3 class="video-info-h3"><a>{{video.name}}</a></h3>
           <p class="video-info-singer"><a>{{video.singer_name}}</a></p>
         </div>
       </div>
-
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
   <div class="keeng-topic">
     <h2 class="keeng-h2-title"><a>DANH SÁCH CHỦ ĐỀ</a></h2>
     <div class="keeng-topic-wrap">
       <a *ngFor="let topic of topics" class="keeng-topic-item">
-        <img src="{{ topic.image }}" />
+        <img src="{{ topic.image }}"/>
         <span>{{ topic.name }}</span>
       </a>
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
   <div class="keeng-video keeng-phim">
     <h2 class="keeng-h2-title"><a>PHIM HOT</a></h2>
     <div class="keeng-video-wrap">
-
-      <div *ngFor="let film of films" class="keeng-video-item"> <a class="keeng-video-img">
-        <img src="{{ film.image }}" /> </a>
+      <div *ngFor="let film of films" class="keeng-video-item"><a class="keeng-video-img">
+        <img src="{{ film.image }}"/> </a>
         <div class="keeng-video-info">
-          <h3 class="video-info-h3"> <a>{{ film.name }}</a> </h3>
+          <h3 class="video-info-h3"><a>{{ film.name }}</a></h3>
         </div>
       </div>
-
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
   <div class="keeng-cate-hot">
     <h2 class="keeng-h2-title"><a>CHUYÊN MỤC HOT</a></h2>
     <div class="cate-hot-wrap" id="cate_hot_swiper">
       <div class="swiper-wrapper">
         <a class="cate-hot-item swiper-slide">
-          <img src="assets/images/bg_cate.jpg" />
+          <img src="assets/images/bg_cate.jpg"/>
           <span>HÀNH ĐỘNG</span>
         </a>
         <a class="cate-hot-item swiper-slide">
-          <img src="assets/images/bg_cate.jpg" />
+          <img src="assets/images/bg_cate.jpg"/>
           <span>TÌNH CẢM</span>
         </a>
         <a class="cate-hot-item swiper-slide">
-          <img src="assets/images/bg_cate.jpg" />
+          <img src="assets/images/bg_cate.jpg"/>
           <span>VÕ THUẬT</span>
         </a>
       </div>
@@ -201,6 +184,7 @@
   </div>
   <div class="app-keeng">
     <h3 class="app-keeng-h3">Trải nghiệm tốt hơn với ứng dụng Keeng</h3>
-    <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96" /></a><a><img src="assets/images/ver4_07.png" width="96" /></a><a><img src="assets/images/ver4_08.png" width="96" /></a></p>
+    <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96"/></a><a><img
+      src="assets/images/ver4_07.png" width="96"/></a><a><img src="assets/images/ver4_08.png" width="96"/></a></p>
   </div>
 </div>

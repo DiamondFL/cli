@@ -11,11 +11,15 @@ export class KeengService {
     'Access-Control-Allow-Headers': '*',
     'Access-Control-Allow-Credentials': true
   });
-  constructor(private http: Http) { }
+
+  constructor(private http: Http) {
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
+
   // index() {
   //   let url = 'http://api.keeng.vn/v1/public/home/alldata';
   //   return this.http.get(url, {headers: this.headers})
