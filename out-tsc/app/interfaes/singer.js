@@ -1,1 +1,0 @@
-//# sourceMappingURL=/var/www/html/material/src/app/interfaes/singer.js.map
