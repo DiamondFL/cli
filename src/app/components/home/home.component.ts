@@ -33,5 +33,4 @@ export class HomeComponent implements OnInit {
     this.films = FILM;
     this.itemHots = ITEM_HOT;
   }
-
 }

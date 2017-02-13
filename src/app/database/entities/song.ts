@@ -1,14 +1,10 @@
-export class Song {
+/**
+ * Created by e on 2/13/17.
+ */
+export class song {
   id: number;
   name: string;
-  file: string;
   image: string;
-  lyric: string;
-  is_active: boolean;
-  is_download: boolean;
-  share_no: boolean;
-  singer_name: boolean;
-  latin_singer_name: boolean;
-  price: number;
-  identify: string;
+  file: string;
+  singer_name: string;
 }
