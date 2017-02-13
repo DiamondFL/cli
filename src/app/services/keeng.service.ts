@@ -16,18 +16,18 @@ export class KeengService {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
-  index() {
-    let url = 'http://api.keeng.vn/v1/public/home/alldata';
-    return this.http.get(url, {headers: this.headers})
-      .toPromise()
-      .then(res => res.json())
-      .catch(this.handleError)
-  }
-  common() {
-    let url = 'http://api.keeng.vn/v1/public/home/commondata';
-    return this.http.get(url, {headers: this.headers})
-      .toPromise()
-      .then(res => res.json())
-      .catch(this.handleError);
-  }
+  // index() {
+  //   let url = 'http://api.keeng.vn/v1/public/home/alldata';
+  //   return this.http.get(url, {headers: this.headers})
+  //     .toPromise()
+  //     .then(res => res.json())
+  //     .catch(this.handleError)
+  // }
+  // common() {
+  //   let url = 'http://api.keeng.vn/v1/public/home/commondata';
+  //   return this.http.get(url, {headers: this.headers})
+  //     .toPromise()
+  //     .then(res => res.json())
+  //     .catch(this.handleError);
+  // }
 }
