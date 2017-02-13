@@ -1,8 +1,11 @@
-export class Album {
+/**
+ * Created by e on 2/13/17.
+ */
+export class album {
   id: number;
-  latin_name: string;
+  name: string;
   image: string;
-  is_active: number;
-  listen_no: number;
-  download_no: number;
+  file: string;
+  singer_name: string;
+
 }

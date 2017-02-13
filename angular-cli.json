@@ -19,10 +19,12 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "assets/css/owl.carousel.min.css",
+        "assets/css/player.css",
+        "assets/css/style.css",
+        "assets/css/swiper.min.css"
       ],
       "scripts": [
-
       ],
       "environments": {
         "source": "environments/environment.ts",

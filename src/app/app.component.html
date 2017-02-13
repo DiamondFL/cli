@@ -1,33 +1,90 @@
-<nav class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Project name</a>
+<div id="wrapper">
+  <div class="keeng-menu-wrap" style="display:none;">
+    <p class="keeng-menu-user">
+      <a class="menu-user-lnk">
+        <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/30/D5ktenIvmUB45KD9lBbJ583e847d47d42_103_103.jpg" /> Xin chào 01687969609
+      </a>
+    </p>
+    <div class="keeng-menu-nhac">
+      <h3 class="menu-nhac-h3">
+        <a>NHẠC</a>
+      </h3>
+      <div class="menu-nhac-wrap">
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_17.png" height="20" /> Bài hát</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_18.png" height="20" /> Video</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_19.png" height="20" /> Album</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_20.png" height="20" /> BXH</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_21.png" height="20" /> Radio</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_22.png" height="20" /> Thể loại</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_23.png" height="20" /> Nghệ sĩ</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_24.png" height="20" /> Chủ đề</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_25.png" height="20" /> Keeng TV</a>
+      </div>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-       <li>
-         <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-       </li>
-       <li>
-         <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-       </li>
-       <li>
-         <a routerLink="/singer" routerLinkActive="active">Singer</a>
-       </li>
-       <li>
-         <a routerLink="/keeng" routerLinkActive="active">Keeng</a>
-       </li>
+    <div class="keeng-menu-nhac">
+      <h3 class="menu-nhac-h3">
+        <a>PHIM</a>
+      </h3>
+      <div class="menu-nhac-wrap">
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_26.png" height="20" /> Phim mới</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_27.png" height="20" /> Phim xem nhiều</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_22.png" height="20" /> Thể loại</a>
+      </div>
+    </div>
+    <div class="keeng-menu-nhac menu-border">
+      <div class="menu-nhac-wrap">
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_28.png" height="20" /> Đăng ký vip</a>
+        <a class="keeng-menu-tag"><img src="assets/images/ver4_29.png" height="20" /> Đăng xuất</a>
+      </div>
+      <p class="mn-info-keeng">
+        Mạng xã hội âm nhạc Keeng.vn<br />
+        Thông tin Keeng - Quy định sử dụng <br />
+        Báo lỗi - Chăm sóc khách hàng: 198 (Miễn phí) <br />
+        <span style="color:#7aaf14">Liên hệ quảng cáo: 0969.16.17.18 </span><br />
+        <span style="color:#7aaf14">Email:hoptac@viettel.com.vn</span><br />
+      </p>
+    </div>
+  </div>
+  <div id="header">
+    <div class="header-content"> <a class="keeng-mn"><img width="22" src="assets/images/ver4_01.png" /></a> <a class="keeng-logo"><img width="90" src="assets/images/logo_wap.png" /></a> <a class="keeng-notify-icon"> <img src="assets/images/ver4_03.png" width="17" /> </a>
+      <div class="keeng-search-form">
+        <p class="form-search">
+          <input placeholder="Nhập từ khóa tìm kiếm..." class="search-keeng-txt " type="text">
+          <!-- <input type="submit" value="" class="search-keeng-btn btnSearch btn-search search-btn"> -->
+          <button class="search-keeng-btn"> <img src="assets/images/ver4_02.png" width="20" > </button>
+        </p>
+        <a class="keeng-icon-search"> <img width="20" src="assets/images/ver4_02.png"> </a> </div>
+      <div class="clear"></div>
+    </div>
+    <div class="header-menu">
+      <ul class="header-menu-ul">
+        <li  class="header-menu-li"><a routerLinkActive="active" routerLink="home" class="header-menu-lnk">HOME</a></li>
+        <li  class="header-menu-li"><a routerLinkActive="active" routerLink="song" class="header-menu-lnk">NHẠC</a></li>
+        <li  class="header-menu-li"><a  class="header-menu-lnk">PHIM</a></li>
+        <li  class="header-menu-li"><a routerLinkActive="active" routerLink="player-livetv" class="header-menu-lnk">LIVE TV</a></li>
+        <div class="clear"></div>
       </ul>
-    </div><!-- /.nav-collapse -->
-  </div><!-- /.container -->
-</nav><!-- /.navbar -->
-<router-outlet></router-outlet>
-
-<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->
-
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <div id="footer">
+    <div class="footer-cate">
+      <h3 class="footer-cate-h3"><a>NHẠC</a></h3>
+      <ul class="footer-cate-ul">
+        <li class="footer-cate-li"><a>Bài hát</a></li>
+        <li class="footer-cate-li"><a>Album</a></li>
+        <li class="footer-cate-li"><a>Video</a></li>
+        <li class="footer-cate-li"><a>Bảng xếp hạng</a></li>
+      </ul>
+    </div>
+    <div class="footer-cate">
+      <h3 class="footer-cate-h3"><a>PHIM</a></h3>
+      <ul class="footer-cate-ul">
+        <li class="footer-cate-li"><a>Hành động</a></li>
+        <li class="footer-cate-li"><a>Kinh dị</a></li>
+        <li class="footer-cate-li"><a>Hài ước</a></li>
+        <li class="footer-cate-li"><a>Viễn Tưởng</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
