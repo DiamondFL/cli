@@ -26,10 +26,7 @@
         "assets/css/swiper.min.css"
       ],
       "scripts": [
-        "assets/js/albumHtml5.js",
-        "assets/js/common.js",
-        "assets/js/html5-player.js",
-        "assets/js/swiper.min.js"
+
       ],
       "environments": {
         "source": "environments/environment.ts",

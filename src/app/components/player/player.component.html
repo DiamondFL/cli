@@ -8,7 +8,7 @@
     <div class="player-song-playing">
       <div class="player-plist">
         <div class="hide-html5">
-          <audio autoplay="autoplay" preload="" autobuffer="" controls="controls" id="audio" src="{{song.file}}">
+          <audio  preload="" autobuffer="" controls="controls" id="audio" src="{{song.file}}">
             <source type="audio/mp3" src="{{song.file}}">
           </audio>
         </div>
@@ -34,6 +34,24 @@
         </div>
       </div>
     </div>
+<!--hay hay-->
+    <div id="wrapper">
+      <audio autoplay="autoplay" id="mytrack" controls>
+          <source src="{{song.file}}" type="audio/mp3">
+      </audio>
+      <nav>
+        <div id="defaultBar">
+          <div id="progressBar"></div>
+        </div>
+        <div id="buttons">
+          <button type="button" onclick="xxx()" id="playButton"></button>
+          <button type="button" id="muteButton"></button>
+          <span id="currentTime">00:00</span>
+          <span id="fullDuration">00:00</span>
+        </div>
+      </nav>
+    </div>
+
     <div class="player-song-tool">
       <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30" /></a></div>
       <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30" /></a></div>

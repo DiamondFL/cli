@@ -10,5 +10,27 @@
 </head>
 <body>
   <app-root>Watting load data ..</app-root>
+  <script>
+    var mytrack = document.getElementById('mytrack');
+    var playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', playOrPause(), false);
+
+    function playOrPause() {
+      if(!mytrack.paused && !mytrack.ended) {
+        mytrack.pause();
+        playButton.style.backgroundImage = 'green';
+        alert(1);
+      } else {
+        mytrack.play();
+        alert(2);
+        playButton.style.backgroundImage = 'blue';
+      }
+    }
+
+    function xxx() {
+      alert(333)
+    }
+  </script>
 </body>
 </html>
