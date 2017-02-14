@@ -8,21 +8,23 @@
     <div class="player-song-playing">
       <div class="player-plist">
         <div class="hide-html5">
-          <audio  preload="" autobuffer="" controls="controls" id="audio" src="{{song.file}}">
+          <audio preload="" autobuffer="" controls="controls" id="audio" src="{{song.file}}">
             <source type="audio/mp3" src="{{song.file}}">
           </audio>
         </div>
         <div class="pdplay">
           <div id="progress">
-            <div id="progress_box" >
-              <div id="audioSlider" ></div>
+            <div id="progress_box">
+              <div id="audioSlider"></div>
               <div style="width: 0%; " id="load_progress">
-                <div style="left: -7px;" id="hand_progress" class="hand-control" ></div>
+                <div style="left: -7px;" id="hand_progress" class="hand-control"></div>
                 <div id="play_progress" style="width: 0px;"></div>
               </div>
             </div>
           </div>
-          <div id="play_time"><div id="current_time_display">00:00</div></div>
+          <div id="play_time">
+            <div id="current_time_display">00:00</div>
+          </div>
           <div class="pdcontrol">
             <div id="prev"></div>
             <div class="pause control" id="play"></div>
@@ -34,17 +36,17 @@
         </div>
       </div>
     </div>
-<!--hay hay-->
+    <!--hay hay-->
     <div id="wrapper">
-      <audio autoplay="autoplay" id="mytrack" controls>
-          <source src="{{song.file}}" type="audio/mp3">
+      <audio id="mytrack" controls>
+        <source src="{{song.file}}" type="audio/mp3">
       </audio>
       <nav>
         <div id="defaultBar">
           <div id="progressBar"></div>
         </div>
         <div id="buttons">
-          <button type="button" onclick="xxx()" id="playButton"></button>
+          <button type="button" id="playButton"></button>
           <button type="button" id="muteButton"></button>
           <span id="currentTime">00:00</span>
           <span id="fullDuration">00:00</span>
@@ -53,103 +55,130 @@
     </div>
 
     <div class="player-song-tool">
-      <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30" /></a></div>
-      <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30" /></a></div>
-      <div class="song-tool-item"><a><img src="assets/images/ver4_12.png" width="30" /></a></div>
-      <div class="song-tool-item"><a><img src="assets/images/ver4_13.png" width="30" /></a></div>
-      <div class="song-tool-item"><a><img src="assets/images/ver4_14.png" width="30" /></a></div>
-      <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30" /></a></div>
+      <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30"/></a></div>
+      <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30"/></a></div>
+      <div class="song-tool-item"><a><img src="assets/images/ver4_12.png" width="30"/></a></div>
+      <div class="song-tool-item"><a><img src="assets/images/ver4_13.png" width="30"/></a></div>
+      <div class="song-tool-item"><a><img src="assets/images/ver4_14.png" width="30"/></a></div>
+      <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30"/></a></div>
       <div class="clear"></div>
     </div>
   </div>
   <div class="keeng-song-lyric">
     <div class="song-lyric-content">
-      1. Nhìn vào sâu đôi mắt<br />
-      Em có biết trong anh muốn nói điều gì<br />
-      Rằng từ lâu đôi ta đã thuộc về nhau.<br />
-      Người làm anh gục ngã<br />
-      Từ ánh mắt, đôi môi, cử chỉ, mỉm cười<br />
-      Rằng từ đây anh muốn bên em suốt đời.<br />
+      1. Nhìn vào sâu đôi mắt<br/>
+      Em có biết trong anh muốn nói điều gì<br/>
+      Rằng từ lâu đôi ta đã thuộc về nhau.<br/>
+      Người làm anh gục ngã<br/>
+      Từ ánh mắt, đôi môi, cử chỉ, mỉm cười<br/>
+      Rằng từ đây anh muốn bên em suốt đời.<br/>
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12"></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"></a></p>
   </div>
   <div class="keeng-song">
     <h2 class="keeng-h2-title"><a>BÀI HÁT</a></h2>
     <div class="keeng-song-wrap" id="show_audio_play">
-      <div class="keeng-song-item"> <a class="keeng-song-img" href="javascript:playAudio()" onclick="return changeSong('0')"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /></a>
+      <div class="keeng-song-item"><a class="keeng-song-img" href="javascript:playAudio()"
+                                      onclick="return changeSong('0')"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/></a>
         <div class="keeng-song-info">
-          <h3 class="song-info-h3"> <a href="javascript:playAudio()" onclick="return changeSong('0')">Anh Em và Ai</a> </h3>
+          <h3 class="song-info-h3"><a href="javascript:playAudio()" onclick="return changeSong('0')">Anh Em và Ai</a>
+          </h3>
           <p class="song-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-song-item"> <a class="keeng-song-img" href="javascript:playAudio()" onclick="return changeSong('1')"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /></a>
+      <div class="keeng-song-item"><a class="keeng-song-img" href="javascript:playAudio()"
+                                      onclick="return changeSong('1')"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/></a>
         <div class="keeng-song-info">
-          <h3 class="song-info-h3"> <a href="javascript:playAudio()" onclick="return changeSong('1')">Anh Em và Ai</a> </h3>
+          <h3 class="song-info-h3"><a href="javascript:playAudio()" onclick="return changeSong('1')">Anh Em và Ai</a>
+          </h3>
           <p class="song-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-song-item"> <a class="keeng-song-img" href="javascript:playAudio()" onclick="return changeSong('2')"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /></a>
+      <div class="keeng-song-item"><a class="keeng-song-img" href="javascript:playAudio()"
+                                      onclick="return changeSong('2')"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/></a>
         <div class="keeng-song-info">
-          <h3 class="song-info-h3"> <a href="javascript:playAudio()" onclick="return changeSong('2')">Anh Em và Ai</a> </h3>
+          <h3 class="song-info-h3"><a href="javascript:playAudio()" onclick="return changeSong('2')">Anh Em và Ai</a>
+          </h3>
           <p class="song-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-song-item"> <a class="keeng-song-img" href="javascript:playAudio()" onclick="return changeSong('3')"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /></a>
+      <div class="keeng-song-item"><a class="keeng-song-img" href="javascript:playAudio()"
+                                      onclick="return changeSong('3')"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/></a>
         <div class="keeng-song-info">
-          <h3 class="song-info-h3"> <a href="javascript:playAudio()" onclick="return changeSong('3')">Anh Em và Ai</a> </h3>
+          <h3 class="song-info-h3"><a href="javascript:playAudio()" onclick="return changeSong('3')">Anh Em và Ai</a>
+          </h3>
           <p class="song-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-song-item"> <a class="keeng-song-img" href="javascript:playAudio()" onclick="return changeSong('4')"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /></a>
+      <div class="keeng-song-item"><a class="keeng-song-img" href="javascript:playAudio()"
+                                      onclick="return changeSong('4')"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/></a>
         <div class="keeng-song-info">
-          <h3 class="song-info-h3"> <a href="javascript:playAudio()" onclick="return changeSong('4')">Anh Em và Ai</a> </h3>
+          <h3 class="song-info-h3"><a href="javascript:playAudio()" onclick="return changeSong('4')">Anh Em và Ai</a>
+          </h3>
           <p class="song-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
   <div class="keeng-album">
     <h2 class="keeng-h2-title"><a>ALBUM HOT</a></h2>
     <div class="keeng-album-wrap">
-      <div class="keeng-album-item"> <a class="keeng-album-img"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/17/hcVwplM8HDZlRwrtEFYM582d0bf5a4113_103_103.jpg" /> <span class="album-shadow"></span> </a>
+      <div class="keeng-album-item"><a class="keeng-album-img"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/17/hcVwplM8HDZlRwrtEFYM582d0bf5a4113_103_103.jpg"/>
+        <span class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>Anh Em và Ai</a> </h3>
+          <h3 class="album-info-h3"><a>Anh Em và Ai</a></h3>
           <p class="album-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-album-item"> <a class="keeng-album-img"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /> <span class="album-shadow"></span> </a>
+      <div class="keeng-album-item"><a class="keeng-album-img"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/> <span
+        class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>Anh Em và Ai</a> </h3>
+          <h3 class="album-info-h3"><a>Anh Em và Ai</a></h3>
           <p class="album-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-album-item"> <a class="keeng-album-img"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/17/hcVwplM8HDZlRwrtEFYM582d0bf5a4113_103_103.jpg" /> <span class="album-shadow"></span> </a>
+      <div class="keeng-album-item"><a class="keeng-album-img"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/17/hcVwplM8HDZlRwrtEFYM582d0bf5a4113_103_103.jpg"/>
+        <span class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>Anh Em và Ai</a> </h3>
+          <h3 class="album-info-h3"><a>Anh Em và Ai</a></h3>
           <p class="album-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-album-item"> <a class="keeng-album-img"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /> <span class="album-shadow"></span> </a>
+      <div class="keeng-album-item"><a class="keeng-album-img"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/> <span
+        class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>Anh Em và Ai</a> </h3>
+          <h3 class="album-info-h3"><a>Anh Em và Ai</a></h3>
           <p class="album-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-album-item"> <a class="keeng-album-img"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/17/hcVwplM8HDZlRwrtEFYM582d0bf5a4113_103_103.jpg" /> <span class="album-shadow"></span> </a>
+      <div class="keeng-album-item"><a class="keeng-album-img"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/album/image/2016/11/17/hcVwplM8HDZlRwrtEFYM582d0bf5a4113_103_103.jpg"/>
+        <span class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>Anh Em và Ai</a> </h3>
+          <h3 class="album-info-h3"><a>Anh Em và Ai</a></h3>
           <p class="album-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
-      <div class="keeng-album-item"> <a class="keeng-album-img"> <img src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg" /> <span class="album-shadow"></span> </a>
+      <div class="keeng-album-item"><a class="keeng-album-img"> <img
+        src="http://vip.img.cdn.keeng.vn/sata11/images/2016/10/28/5df02b4803d4194f01de43eb9a4a3453e1f9df32.jpg"/> <span
+        class="album-shadow"></span> </a>
         <div class="keeng-album-info">
-          <h3 class="album-info-h3"> <a>Anh Em và Ai</a> </h3>
+          <h3 class="album-info-h3"><a>Anh Em và Ai</a></h3>
           <p class="album-info-singer"><a>Trịnh Thăng Bình</a></p>
         </div>
       </div>
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
 
   <div class="keeng-feel">
@@ -160,7 +189,7 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
@@ -170,7 +199,7 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
@@ -180,7 +209,7 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
@@ -190,7 +219,7 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
@@ -200,7 +229,7 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
@@ -210,7 +239,7 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
@@ -220,16 +249,60 @@
           23
         </a>
         <div class="keeng-feel-info">
-          <h3 class="feel-info-h3"> <a>0989***989</a> </h3>
+          <h3 class="feel-info-h3"><a>0989***989</a></h3>
           <p class="feel-info-content">Bài này nghe mãi không chán</p>
           <span class="feel-info-time">9 phút trước</span>
         </div>
       </div>
     </div>
-    <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
   </div>
   <div class="app-keeng">
     <h3 class="app-keeng-h3">Trải nghiệm tốt hơn với ứng dụng Keeng</h3>
-    <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96" /></a><a><img src="assets/images/ver4_07.png" width="96" /></a><a><img src="assets/images/ver4_08.png" width="96" /></a></p>
+    <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96"/></a><a><img
+      src="assets/images/ver4_07.png" width="96"/></a><a><img src="assets/images/ver4_08.png" width="96"/></a></p>
   </div>
 </div>
+
+<script>
+  var mytrack = document.getElementById('mytrack');
+  var playButton = document.getElementById('playButton');
+  var muteButton = document.getElementById('muteButton');
+
+  var duration = document.getElementById('fullDuration');
+  var currentTime = document.getElementById('currentTime');
+
+  var minutes = parseInt(mytrack.duration / 60);
+  var seconds = parseInt(mytrack.duration % 60);
+
+  playButton.addEventListener('click', playOrPause, false);
+  muteButton.addEventListener('click', muteOrUnmute, false);
+
+  function playOrPause() {
+    if (!mytrack.paused && !mytrack.ended) {
+      mytrack.pause();
+      playButton.style.backgroundImage = 'green';
+      alert(1);
+    } else {
+      mytrack.play();
+      alert(2);
+      playButton.style.backgroundImage = 'blue';
+    }
+  }
+  function muteOrUnmute() {
+    if (mytrack.muted === true) {
+      mytrack.muted = false;
+      muteButton.style.background = 'red'
+    } else {
+      mytrack.muted = true;
+      muteButton.style.background = 'silver'
+    }
+  }
+  function update () {
+    if(!mytrack.ended) {
+      currentTime.innerHTML = mytrack.currentTime;
+    } else {
+        currentTime = 0.00;
+    }
+  }
+</script>
