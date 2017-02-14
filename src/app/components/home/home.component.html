@@ -1,196 +1,173 @@
 <div id="body">
   <div id="slider_owl_keeng">
-    <div class="slider-owl-keeng">
-      <a class="slider-owl-item" href="http://m.keeng.vn/song/Khoc-Bang-Nu-Cuoi-UNI5-320Kbps/WvmpiRmZ.html?src=flash">
-        <img
-          src="http://vip.img.cdn.keeng.vn/sata11/images/images_thumb/f_sata11/images/tintuc/2016/11/19/48fa76b56a656fa1ca168c3d2c31ab889a1bdb87_640_293.jpg"
-          title="Kh&oacute;c Bằng Nụ Cười - UNI5"/>
-      </a>
-    </div>
-    <div class="keeng-album">
-      <h2 class="keeng-h2-title"><a>ALBUM HOT</a></h2>
-      <div class="keeng-album-wrap">
-        <div *ngFor="let album of albums" class="keeng-album-item">
-          <a routerLink="/player-album" class="keeng-album-img"> <img src="{{album.image}}"/> <span
-            class="album-shadow"></span> </a>
-          <div class="keeng-album-info">
-            <h3 class="album-info-h3"><a routerLink="/player-album">{{album.name}}</a></h3>
-            <p class="album-info-singer"><a routerLink="/player-album">{{album.singer_name}}</a></p>
-          </div>
+    <carousel>
+      <slide *ngFor="let flash of flashHots">
+        <a href="{{flash.link}}">
+          <img class="img-responsive" style="width: 100%" src="{{flash.image}}" alt="{{flash.title}}">
+        </a>
+      </slide>
+    </carousel>
+  </div>
+  <div class="keeng-album">
+    <h2 class="keeng-h2-title"><a>ALBUM HOT</a></h2>
+    <div class="keeng-album-wrap">
+      <div *ngFor="let album of albums" class="keeng-album-item">
+        <a routerLink="/player-album" class="keeng-album-img"> <img src="{{album.image}}"/> <span
+          class="album-shadow"></span> </a>
+        <div class="keeng-album-info">
+          <h3 class="album-info-h3"><a routerLink="/player-album">{{album.name}}</a></h3>
+          <p class="album-info-singer"><a routerLink="/player-album">{{album.singer_name}}</a></p>
         </div>
       </div>
-      <p class="keeng-more-p"><a routerLink="/album"><img src="assets/images/ver4_05.png" width="12"/></a></p>
     </div>
-    <div class="keeng-propose">
-      <h2 class="keeng-h2-title"><a>Nhạc HOT</a></h2>
-      <div *ngFor="let itemHot of itemHots" id="box-hot" class="keeng-hot-detail">
-        <div class="keeng-video">
-          <div class="kv-content">
-            <a class="kv-lnk" routerLink="/player-video">
-              <img src="{{itemHot.video.image}}" title="{{itemHot.video.name}}" alt="{{itemHot.video.name}}"
-                   class="kv-img">
-              <span class="kv-sp-icon">
+    <p class="keeng-more-p"><a routerLink="/album"><img src="assets/images/ver4_05.png" width="12"/></a></p>
+  </div>
+  <div class="keeng-propose">
+    <h2 class="keeng-h2-title"><a>Nhạc HOT</a></h2>
+    <div *ngFor="let itemHot of itemHots" id="box-hot" class="keeng-hot-detail">
+      <div class="keeng-video">
+        <div class="kv-content">
+          <a class="kv-lnk" routerLink="/player-video">
+            <img src="{{itemHot.video.image}}" title="{{itemHot.video.name}}" alt="{{itemHot.video.name}}"
+                 class="kv-img">
+            <span class="kv-sp-icon">
                 <img class="kv-img-icon" src="http://vip.keeng.vn/v3/images/ver3_08.png" height="59">
             </span>
-            </a>
-            <div class="kv-info">
-              <h3 class="kv-info-h3">
-                <a routerLink="/player-video">
-                  {{itemHot.video.name}}
-                </a>
-              </h3>
-              <p class="kv-info-p"><a routerLink="/player-video"
-                                      class="kv-info-singer">{{itemHot.video.singer_name}}</a> <span
-                class="kv-info-view">
+          </a>
+          <div class="kv-info">
+            <h3 class="kv-info-h3">
+              <a routerLink="/player-video">
+                {{itemHot.video.name}}
+              </a>
+            </h3>
+            <p class="kv-info-p"><a routerLink="/player-video"
+                                    class="kv-info-singer">{{itemHot.video.singer_name}}</a> <span
+              class="kv-info-view">
                 <img src="http://vip.keeng.vn/v3/images/ver3_09.png" height="10"> {{itemHot.video.listen_no}}</span>
-              </p>
-            </div>
-          </div>
-          <div class="keeng-social">
-            <a class="ks-like" href="" onclick="addFavourite(229498, 'video', this);return false;">THÍCH &nbsp;<span
-              id="keeng-video-like-229498">{{itemHot.video.like_no}}</span> </a>
-            <a class="ks-comment" href="http://m.keeng.vn/video/duyen-dau-nam-nhat-kim-anh/a1L9Hwpc.html#cscx">BÌNH LUẬN
-              &nbsp;<span id="keeng-video-comment-229498">{{itemHot.video.comment_no}}</span></a>
-            <input name="listhot-id" value="video-229498" type="hidden">
+            </p>
           </div>
         </div>
-        <div class="keeng-album">
-          <div class="ka-content">
-            <a routerLink="/player-album" class="ka-lnk">
-              <img
-                src="{{itemHot.album.image}}"
-                title="{{itemHot.album.name}}">
-            </a>
-            <div class="ka-info">
-              <h3 class="ka-info-h3">
-                <a routerLink="/player-album">{{itemHot.album.name}}</a>
-              </h3>
-              <p class="ka-info-singer">
-                <a routerLink="/player-album">
-                  {{itemHot.album.singer_name}}
-                </a>
-              </p>
-              <span class="ka-info-view"><img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.album.listen_no}}</span>
-            </div>
-          </div>
-          <div class="keeng-social">
-            <a class="ks-like" href="" onclick="addFavourite(90676, 'album', this);return false;">THÍCH &nbsp;<span
-              id="keeng-album-like-90676">{{itemHot.album.like_no}}</span> </a>
-            <a class="ks-comment" href="http://m.keeng.vn/album/tet-nay-con-se-ve-chi-dan/CMxHkFqq.html#cscx">BÌNH LUẬN
-              &nbsp;<span id="keeng-album-comment-90676">{{itemHot.album.comment_no}}</span></a>
-            <input name="listhot-id" value="album-90676" type="hidden">
+      </div>
+      <div class="keeng-album">
+        <div class="ka-content">
+          <a routerLink="/player-album" class="ka-lnk">
+            <img
+              src="{{itemHot.album.image}}"
+              title="{{itemHot.album.name}}">
+          </a>
+          <div class="ka-info">
+            <h3 class="ka-info-h3">
+              <a routerLink="/player-album">{{itemHot.album.name}}</a>
+            </h3>
+            <p class="ka-info-singer">
+              <a routerLink="/player-album">
+                {{itemHot.album.singer_name}}
+              </a>
+            </p>
+            <span class="ka-info-view"><img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.album.listen_no}}</span>
           </div>
         </div>
-        <div class="keeng-song">
-          <div class="ka-content">
-            <a class="ka-lnk" routerLink="/player">
-              <img src="{{itemHot.song.image}}"
-                   title="Bao Giờ Lấy Chồng" alt="{{itemHot.song.name}}">
-            </a>
-            <div class="ka-info">
-              <h3 class="ka-info-h3">
-                <a routerLink="/player">
-                  <span class="sp-exclusive">ĐỘC QUYỀN</span>
-                  {{itemHot.song.name}}
-                </a>
-              </h3>
-              <p class="ka-info-singer">
-                <a routerLink="/player">
-                  {{itemHot.song.singer_name}}
-                </a>
-                <span class="ka-info-view">
+
+      </div>
+      <div class="keeng-song">
+        <div class="ka-content">
+          <a class="ka-lnk" routerLink="/player">
+            <img src="{{itemHot.song.image}}"
+                 title="{{itemHot.song.name}}" alt="{{itemHot.song.name}}">
+          </a>
+          <div class="ka-info">
+            <h3 class="ka-info-h3">
+              <a routerLink="/player"><span class="sp-exclusive">ĐỘC QUYỀN</span> {{itemHot.song.name}} </a>
+            </h3>
+            <p class="ka-info-singer">
+              <a routerLink="/player">
+                {{itemHot.song.singer_name}}
+              </a>
+            </p>
+            <span class="ka-info-view">
                     <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.song.listen_no}}
                 </span>
-              </p>
-            </div>
-          </div>
-          <div class="keeng-social">
-            <a class="ks-like" href="" onclick="addFavourite(2856400, 'song', this);return false;">THÍCH &nbsp;<span
-              id="keeng-song-like-2856400">{{itemHot.song.like_no}}</span> </a>
-            <a class="ks-comment"
-               href="http://m.keeng.vn/song/Bao-Gio-Lay-Chong-Bich-Phuong-320Kbps/kOdgCfxR.html#cscx">BÌNH
-              LUẬN &nbsp;<span id="keeng-song-comment-2856400">{{itemHot.song.comment_no}}</span></a>
-            <input name="listhot-id" value="song-2856400" type="hidden">
           </div>
         </div>
-        <p class="more-keeng-view" id="blockPlaylistHot_1" style="display: none;">
-          <a href="javascript:displayBoxHot(1);">
-            <img src="http://vip.keeng.vn/v3/images/ver3_12.png" height="7">
-          </a>
-        </p>
+
       </div>
+      <p class="more-keeng-view" id="blockPlaylistHot_1" style="display: none;">
+        <a href="javascript:displayBoxHot(1);">
+          <img src="http://vip.keeng.vn/v3/images/ver3_12.png" height="7">
+        </a>
+      </p>
     </div>
-    <div class="keeng-song">
-      <h2 class="keeng-h2-title"><a>BÀI HÁT HOT</a></h2>
-      <div class="keeng-song-wrap">
-        <div *ngFor="let song of songs" class="keeng-song-item">
-          <a routerLink="/player" class="keeng-song-img"><img src="{{song.image}}"/></a>
-          <div class="keeng-song-info">
-            <h3 class="song-info-h3"><a routerLink="/player"> {{song.name}}</a></h3>
-            <p class="song-info-singer"><a routerLink="/player">{{song.singer_name}}</a></p>
-          </div>
+  </div>
+  <div class="keeng-song">
+    <h2 class="keeng-h2-title"><a>BÀI HÁT HOT</a></h2>
+    <div class="keeng-song-wrap">
+      <div *ngFor="let song of songs" class="keeng-song-item">
+        <a routerLink="/player" class="keeng-song-img"><img src="{{song.image}}"/></a>
+        <div class="keeng-song-info">
+          <h3 class="song-info-h3"><a routerLink="/player"> {{song.name}}</a></h3>
+          <p class="song-info-singer"><a routerLink="/player">{{song.singer_name}}</a></p>
         </div>
       </div>
-      <p class="keeng-more-p"><a routerLink="/song"><img src="assets/images/ver4_05.png" width="12"/></a></p>
     </div>
-    <div class="keeng-video">
-      <h2 class="keeng-h2-title"><a>VIDEO HOT</a></h2>
-      <div class="keeng-video-wrap">
-        <div *ngFor="let video of videos" class="keeng-video-item">
-          <a routerLink="/player-video" class="keeng-video-img"><img src="{{video.image}}"/> </a>
-          <div class="keeng-video-info">
-            <h3 class="video-info-h3"><a routerLink="/player-video">{{video.name}}</a></h3>
-            <p class="video-info-singer"><a routerLink="/player-video">{{video.singer_name}}</a></p>
-          </div>
+    <p class="keeng-more-p"><a routerLink="/song"><img src="assets/images/ver4_05.png" width="12"/></a></p>
+  </div>
+  <div class="keeng-video">
+    <h2 class="keeng-h2-title"><a>VIDEO HOT</a></h2>
+    <div class="keeng-video-wrap">
+      <div *ngFor="let video of videos" class="keeng-video-item">
+        <a routerLink="/player-video" class="keeng-video-img"><img src="{{video.image}}"/> </a>
+        <div class="keeng-video-info">
+          <h3 class="video-info-h3"><a routerLink="/player-video">{{video.name}}</a></h3>
+          <p class="video-info-singer"><a routerLink="/player-video">{{video.singer_name}}</a></p>
         </div>
       </div>
-      <p class="keeng-more-p"><a routerLink="/list-video"><img src="assets/images/ver4_05.png" width="12"/></a></p>
     </div>
-    <div class="keeng-topic">
-      <h2 class="keeng-h2-title"><a>DANH SÁCH CHỦ ĐỀ</a></h2>
-      <div class="keeng-topic-wrap">
-        <a routerLink="/topic-detail" *ngFor="let topic of topics" class="keeng-topic-item">
-          <img src="{{ topic.image }}"/>
-          <span>{{ topic.name }}</span>
+    <p class="keeng-more-p"><a routerLink="/list-video"><img src="assets/images/ver4_05.png" width="12"/></a></p>
+  </div>
+  <div class="keeng-topic">
+    <h2 class="keeng-h2-title"><a>DANH SÁCH CHỦ ĐỀ</a></h2>
+    <div class="keeng-topic-wrap">
+      <a routerLink="/topic-detail" *ngFor="let topic of topics" class="keeng-topic-item">
+        <img src="{{ topic.image }}"/>
+        <span>{{ topic.name }}</span>
+      </a>
+    </div>
+    <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
+  </div>
+  <div class="keeng-video keeng-phim">
+    <h2 class="keeng-h2-title"><a>PHIM HOT</a></h2>
+    <div class="keeng-video-wrap">
+      <div *ngFor="let film of films" class="keeng-video-item"><a class="keeng-video-img">
+        <img src="{{ film.image }}"/> </a>
+        <div class="keeng-video-info">
+          <h3 class="video-info-h3"><a>{{ film.name }}</a></h3>
+        </div>
+      </div>
+    </div>
+    <p class="keeng-more-p"><a routerLink="/topic"><img src="assets/images/ver4_05.png" width="12"/></a></p>
+  </div>
+  <div class="keeng-cate-hot">
+    <h2 class="keeng-h2-title"><a>CHUYÊN MỤC HOT</a></h2>
+    <div class="cate-hot-wrap" id="cate_hot_swiper">
+      <div class="swiper-wrapper">
+        <a class="cate-hot-item swiper-slide">
+          <img src="assets/images/bg_cate.jpg"/>
+          <span>HÀNH ĐỘNG</span>
+        </a>
+        <a class="cate-hot-item swiper-slide">
+          <img src="assets/images/bg_cate.jpg"/>
+          <span>TÌNH CẢM</span>
+        </a>
+        <a class="cate-hot-item swiper-slide">
+          <img src="assets/images/bg_cate.jpg"/>
+          <span>VÕ THUẬT</span>
         </a>
       </div>
-      <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
     </div>
-    <div class="keeng-video keeng-phim">
-      <h2 class="keeng-h2-title"><a>PHIM HOT</a></h2>
-      <div class="keeng-video-wrap">
-        <div *ngFor="let film of films" class="keeng-video-item"><a class="keeng-video-img">
-          <img src="{{ film.image }}"/> </a>
-          <div class="keeng-video-info">
-            <h3 class="video-info-h3"><a>{{ film.name }}</a></h3>
-          </div>
-        </div>
-      </div>
-      <p class="keeng-more-p"><a routerLink="/topic"><img src="assets/images/ver4_05.png" width="12"/></a></p>
-    </div>
-    <div class="keeng-cate-hot">
-      <h2 class="keeng-h2-title"><a>CHUYÊN MỤC HOT</a></h2>
-      <div class="cate-hot-wrap" id="cate_hot_swiper">
-        <div class="swiper-wrapper">
-          <a class="cate-hot-item swiper-slide">
-            <img src="assets/images/bg_cate.jpg"/>
-            <span>HÀNH ĐỘNG</span>
-          </a>
-          <a class="cate-hot-item swiper-slide">
-            <img src="assets/images/bg_cate.jpg"/>
-            <span>TÌNH CẢM</span>
-          </a>
-          <a class="cate-hot-item swiper-slide">
-            <img src="assets/images/bg_cate.jpg"/>
-            <span>VÕ THUẬT</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="app-keeng">
-      <h3 class="app-keeng-h3">Trải nghiệm tốt hơn với ứng dụng Keeng</h3>
-      <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96"/></a><a><img
-        src="assets/images/ver4_07.png" width="96"/></a><a><img src="assets/images/ver4_08.png" width="96"/></a></p>
-    </div>
+  </div>
+  <div class="app-keeng">
+    <h3 class="app-keeng-h3">Trải nghiệm tốt hơn với ứng dụng Keeng</h3>
+    <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96"/></a><a><img
+      src="assets/images/ver4_07.png" width="96"/></a><a><img src="assets/images/ver4_08.png" width="96"/></a></p>
   </div>
 </div>

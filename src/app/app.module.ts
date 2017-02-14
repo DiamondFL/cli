@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
-import {SingerDirective} from './directive/singer.directive';
 import {SingerComponent} from './components/singer/singer.component';
 import {ForcePipe} from './pipes/force.pipe';
 import {HeroDetailComponent} from './components/hero-detail/hero-detail.component';
@@ -17,11 +16,10 @@ import {HeroSearchComponent} from './components/hero-search/hero-search.componen
 import {HeroSearchService} from "./services/hero-search.service";
 import {SingerService} from "./services/singer.service";
 //import { MaterialModule } from '@angular/material';
+import { CarouselModule } from 'ng2-bootstrap/carousel';
 import 'hammerjs';
 import {KeengComponent} from './components/keeng/keeng.component';
 import {KeengService} from "./services/keeng.service";
-import {CarouselModule} from 'ng2-bootstrap';
-import {AlertModule} from "ng2-bootstrap";
 import {PlayerComponent} from './components/player/player.component';
 import {PlayerAlbumComponent} from './components/player-album/player-album.component';
 import {PlayerChartsComponent} from './components/player-charts/player-charts.component';
@@ -40,11 +38,19 @@ import {SingerDetailComponent} from './components/singer-detail/singer-detail.co
 import {ListVideoComponent} from './components/list-video/list-video.component';
 import {KeengRoutingModule} from "./routes/keeng.routes";
 import {CategoryComponent} from './components/category/category.component';
+
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+import { VideoComponent } from './directives/video/video.component';
+import { VideoDirective } from './directives/video.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     SingerComponent,
-    SingerDirective,
+
     ForcePipe,
     HeroDetailComponent,
     HeroComponent,
@@ -69,7 +75,9 @@ import {CategoryComponent} from './components/category/category.component';
     SingerDetailComponent,
     ListSongComponent,
     ListVideoComponent,
-    CategoryComponent
+    CategoryComponent,
+    VideoComponent,
+    VideoDirective
   ],
   imports: [
     BrowserModule,
@@ -78,9 +86,12 @@ import {CategoryComponent} from './components/category/category.component';
     // AppRoutingModule,
     // InMemoryWebApiModule.forRoot(InMemoryDataService),
     //MaterialModule.forRoot(),
-    AlertModule.forRoot(),
     CarouselModule.forRoot(),
-    KeengRoutingModule
+    KeengRoutingModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [HeroService, HeroSearchService, SingerService, KeengService],
   bootstrap: [AppComponent]

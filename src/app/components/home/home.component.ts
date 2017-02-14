@@ -10,6 +10,8 @@ import {TOPIC} from "../../database/seeds/topic";
 import {flim} from "../../database/entities/flim";
 import {FILM} from "../../database/seeds/flim";
 import {ITEM_HOT} from "../../database/seeds/itemHots";
+import {flashHot} from "../../database/entities/flash-hot";
+import {FLASH_HOT} from "../../database/seeds/flash-hot";
 
 @Component({
   selector: 'app-home',
@@ -23,7 +25,13 @@ export class HomeComponent implements OnInit {
   topics: topic[] = [];
   films: flim[] = [];
   itemHots: any[] = [];
-  constructor() { }
+  flashHots: flashHot[] = [];
+
+  sources:Array<Object>;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
     this.albums = ALBUM;
@@ -32,5 +40,12 @@ export class HomeComponent implements OnInit {
     this.topics = TOPIC;
     this.films = FILM;
     this.itemHots = ITEM_HOT;
+    this.flashHots = FLASH_HOT;
+    this.sources = [
+      {
+        src: "http://keengmp3obj.1d2173fe.viettel-cdn.vn/bucket-media-keeng/sata07/video/2017/01/06/hgPLtlVTKDcS1fejBD1E586eff02e1896.mp4",
+        type: "video/mp4"
+      }
+    ];
   }
 }

@@ -39,7 +39,7 @@ function setNowPlayingSong(index) {
 	}
 };
 
-bodyLoaded();
+// bodyLoaded();
 document.getElementById("audio").addEventListener("ended", function() {
 	index = getIndex();
 	index = (index + 1 < songs.length) ? index + 1 : 0;

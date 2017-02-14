@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { SingerDirective } from './singer.directive';
+import { VideoDirective } from './video.directive';
 
-describe('SingerDirective', () => {
+describe('VideoDirective', () => {
   it('should create an instance', () => {
-    const directive = new SingerDirective();
+    const directive = new VideoDirective();
     expect(directive).toBeTruthy();
   });
 });

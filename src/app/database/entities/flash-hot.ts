@@ -1,6 +1,7 @@
-export class FlashHot {
+export class flashHot {
   id: number;
   image: string;
   link: string;
-  is_active: number;
+  title: string;
+  //is_active: number;
 }
