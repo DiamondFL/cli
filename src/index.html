@@ -7,8 +7,110 @@
   <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    #wrapper {
+      width: 640px;
+      margin: 10px auto;
+    }
+    nav {
+      background: rgb(250, 250, 250);
+      width: 640px;
+      padding-bottom: 3px;
+    }
+    #defaultBar {
+      width: 640px;
+      position: relative;
+      background: #606060;
+      height: 10px;
+    }
+    #progressBar {
+      position: absolute;
+      height: 10px;
+      background: #3498db;
+      width: 0;
+    }
+    #playButton {
+      background: rgb(250, 250, 250);
+      border: none;
+      height: 32px;
+      width: 32px;
+      background: rebeccapurple no-repeat;
+      background-position: center;
+    }
+    #muteButton {
+      background: rgb(250, 250, 250);
+      border: none;
+      height: 32px;
+      width: 32px;
+      background: firebrick no-repeat;
+      background-position: center;
+    }
+    #muteButton:active, #playButton:active {
+      position: relative;
+      top: 2px;
+    }
+  </style>
 </head>
 <body>
+<!--hay hay-->
+<div id="wrapper">
+  <audio id="mytrack" controls>
+    <source src="http://nhachoa.keeng.vn/sas_01/songv3/NamViet0710/Vi_Anh_La_Gio_Edm_Ver.mp3?s=WEB&ot=song&oid=2407862&rt=" type="audio/mp3">
+  </audio>
+  <nav>
+    <div id="defaultBar">
+      <div id="progressBar"></div>
+    </div>
+    <div id="buttons">
+      <button type="button" id="playButton"></button>
+      <button type="button" id="muteButton"></button>
+      <span id="currentTime">00:00</span>
+      <span id="fullDuration">00:00</span>
+    </div>
+  </nav>
+</div>
   <app-root>Watting load data ..</app-root>
+  <script>
+    var mytrack = document.getElementById('mytrack');
+    console.log(mytrack);
+    var playButton = document.getElementById('playButton');
+    var muteButton = document.getElementById('muteButton');
+    var duration = document.getElementById('fullDuration');
+    var currentTime = document.getElementById('currentTime');
+    var minutes = mytrack && parseInt(mytrack.duration / 60);
+    var seconds = mytrack && parseInt(mytrack.duration % 60);
+    duration.innerHTML = minutes + ':' + seconds;
+    playButton.addEventListener('click', playOrPause, false);
+    muteButton.addEventListener('click', muteOrUnmute, false);
+    function playOrPause() {
+      if (!mytrack.paused && !mytrack.ended) {
+        mytrack.pause();
+        playButton.style.backgroundImage = 'green';
+        window.clearInterval(updateTime);
+      } else {
+        mytrack.play();
+        playButton.style.backgroundImage = 'blue';
+        updateTime = setInterval(update, 500);
+      }
+    }
+    function muteOrUnmute() {
+      if (mytrack.muted === true) {
+        mytrack.muted = false;
+        muteButton.style.background = 'red'
+      } else {
+        mytrack.muted = true;
+        muteButton.style.background = 'silver'
+      }
+    }
+    function update () {
+      if(!mytrack.ended) {
+        var playedMinutes = parseInt(mytrack.currentTime / 60);
+        var playedSeconds = parseInt(mytrack.currentTime % 60);
+        currentTime.innerHTML = mytrack.currentTime;
+      } else {
+        currentTime = 0.00;
+      }
+    }
+  </script>
 </body>
 </html>

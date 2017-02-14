@@ -1,44 +1,4 @@
 body {
   background: #101010;
 }
-#wrapper {
-  width: 640px;
-  margin: 10px auto;
-}
-nav {
-  background: rgb(250, 250, 250);
-  width: 640px;
-  padding-bottom: 3px;
-}
-#defaultBar {
-  width: 640px;
-  position: relative;
-  background: #606060;
-  height: 10px;
-}
-#progressBar {
-  position: absolute;
-  height: 10px;
-  background: #3498db;
-  width: 0;
-}
-#playButton {
-  background: rgb(250, 250, 250);
-  border: none;
-  height: 32px;
-  width: 32px;
-  background: rebeccapurple no-repeat;
-  background-position: center;
-}
-#muteButton {
-  background: rgb(250, 250, 250);
-  border: none;
-  height: 32px;
-  width: 32px;
-  background: firebrick no-repeat;
-  background-position: center;
-}
-#muteButton:active, #playButton:active {
-  position: relative;
-  top: 2px;
-}
+

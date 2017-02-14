@@ -36,23 +36,7 @@
         </div>
       </div>
     </div>
-    <!--hay hay-->
-    <div id="wrapper">
-      <audio id="mytrack" controls>
-        <source src="{{song.file}}" type="audio/mp3">
-      </audio>
-      <nav>
-        <div id="defaultBar">
-          <div id="progressBar"></div>
-        </div>
-        <div id="buttons">
-          <button type="button" id="playButton"></button>
-          <button type="button" id="muteButton"></button>
-          <span id="currentTime">00:00</span>
-          <span id="fullDuration">00:00</span>
-        </div>
-      </nav>
-    </div>
+
 
     <div class="player-song-tool">
       <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30"/></a></div>
@@ -264,45 +248,4 @@
   </div>
 </div>
 
-<script>
-  var mytrack = document.getElementById('mytrack');
-  var playButton = document.getElementById('playButton');
-  var muteButton = document.getElementById('muteButton');
 
-  var duration = document.getElementById('fullDuration');
-  var currentTime = document.getElementById('currentTime');
-
-  var minutes = parseInt(mytrack.duration / 60);
-  var seconds = parseInt(mytrack.duration % 60);
-
-  playButton.addEventListener('click', playOrPause, false);
-  muteButton.addEventListener('click', muteOrUnmute, false);
-
-  function playOrPause() {
-    if (!mytrack.paused && !mytrack.ended) {
-      mytrack.pause();
-      playButton.style.backgroundImage = 'green';
-      alert(1);
-    } else {
-      mytrack.play();
-      alert(2);
-      playButton.style.backgroundImage = 'blue';
-    }
-  }
-  function muteOrUnmute() {
-    if (mytrack.muted === true) {
-      mytrack.muted = false;
-      muteButton.style.background = 'red'
-    } else {
-      mytrack.muted = true;
-      muteButton.style.background = 'silver'
-    }
-  }
-  function update () {
-    if(!mytrack.ended) {
-      currentTime.innerHTML = mytrack.currentTime;
-    } else {
-        currentTime = 0.00;
-    }
-  }
-</script>
