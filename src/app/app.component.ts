@@ -1,31 +1,37 @@
 import {Component, OnInit} from '@angular/core';
-import {Hero} from "./classes/hero";
-import {HeroService} from "./services/hero.service";
+import {KeengService} from "./services/keeng.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [HeroService]
+  providers: []
 })
 
 export class AppComponent implements OnInit {
-  title = 'Tour of Heroes';
+  common: any[] = [];
+  linkFooter: any[] = [];
+  constructor(private keengService: KeengService) {
 
-  // heroes: Hero[];
-  // selectedHero: Hero;
-  // constructor(private heroService: HeroService) {
-  //
-  // }
-  // getHeroes(): void {
-  //   this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-  // }
-  ngOnInit(): void {
-    // this.getHeroes();
   }
-
-  // onSelect(hero: Hero): void {
-  //   console.log(hero);
-  //   this.selectedHero = hero;
-  // }
+  ngOnInit(): void {
+    this.keengService.common().then(
+      data => {
+        this.common = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    this.keengService.linkFooter().then(
+      data => {
+        this.linkFooter = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
 }

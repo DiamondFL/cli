@@ -3,7 +3,8 @@
     <carousel>
       <slide *ngFor="let flash of flashHots">
         <a href="{{flash.link}}">
-          <img class="img-responsive" style="width: 100%" src="{{IMAGE_DOMAIN + flash.image_path}}" alt="{{flash.title}}">
+          <img class="img-responsive" style="width: 100%" src="{{IMAGE_DOMAIN + flash.image_path}}"
+               alt="{{flash.title}}">
         </a>
       </slide>
     </carousel>
@@ -40,10 +41,11 @@
                 {{itemHot.video.name}}
               </a>
             </h3>
-            <p class="kv-info-p"><a routerLink="/player-video"
-                                    class="kv-info-singer">{{itemHot.video.singer_name}}</a> <span
-              class="kv-info-view">
-                <img src="http://vip.keeng.vn/v3/images/ver3_09.png" height="10"> {{itemHot.video.listen_no}}</span>
+            <p class="kv-info-p">
+              <a routerLink="/player-video" class="kv-info-singer">{{itemHot.video.singer_name}}</a>
+              <span class="kv-info-view">
+                <img src="http://vip.keeng.vn/v3/images/ver3_09.png" height="10"> {{itemHot.video.listen_no}}
+              </span>
             </p>
           </div>
         </div>
@@ -64,16 +66,16 @@
                 {{itemHot.album.singer_name}}
               </a>
             </p>
-            <span class="ka-info-view"><img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.album.listen_no}}</span>
+            <span class="ka-info-view">
+              <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.album.listen_no}}
+            </span>
           </div>
         </div>
-
       </div>
       <div class="keeng-song">
         <div class="ka-content">
           <a class="ka-lnk" routerLink="/player">
-            <img src="{{itemHot.song.image}}"
-                 title="{{itemHot.song.name}}" alt="{{itemHot.song.name}}">
+            <img src="{{itemHot.song.image}}" title="{{itemHot.song.name}}" alt="{{itemHot.song.name}}">
           </a>
           <div class="ka-info">
             <h3 class="ka-info-h3">
@@ -85,11 +87,10 @@
               </a>
             </p>
             <span class="ka-info-view">
-                    <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.song.listen_no}}
-                </span>
+              <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.song.listen_no}}
+            </span>
           </div>
         </div>
-
       </div>
       <p class="more-keeng-view" id="blockPlaylistHot_1" style="display: none;">
         <a href="javascript:displayBoxHot(1);">
@@ -167,7 +168,10 @@
   </div>
   <div class="app-keeng">
     <h3 class="app-keeng-h3">Trải nghiệm tốt hơn với ứng dụng Keeng</h3>
-    <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96"/></a><a><img
-      src="assets/images/ver4_07.png" width="96"/></a><a><img src="assets/images/ver4_08.png" width="96"/></a></p>
+    <p class="app-keeng-p">
+      <a><img src="assets/images/ver4_06.png" width="96"/></a><a>
+      <img src="assets/images/ver4_07.png" width="96"/></a>
+      <a><img src="assets/images/ver4_08.png" width="96"/></a>
+    </p>
   </div>
 </div>

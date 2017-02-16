@@ -5,20 +5,8 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {SingerComponent} from './components/singer/singer.component';
 import {ForcePipe} from './pipes/force.pipe';
-import {HeroDetailComponent} from './components/hero-detail/hero-detail.component';
-import {HeroService} from "./services/hero.service";
-import {HeroComponent} from './components/hero/hero.component';
-// import {AppRoutingModule} from "./routes/app.routes";
-import {DashboardComponent} from './components/dashboard/dashboard.component';
-//import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-//import {InMemoryDataService} from "./services/in-memory-data.service";
-import {HeroSearchComponent} from './components/hero-search/hero-search.component';
-import {HeroSearchService} from "./services/hero-search.service";
-import {SingerService} from "./services/singer.service";
-//import { MaterialModule } from '@angular/material';
 import { CarouselModule } from 'ng2-bootstrap/carousel';
 import 'hammerjs';
-import {KeengComponent} from './components/keeng/keeng.component';
 import {KeengService} from "./services/keeng.service";
 import {PlayerComponent} from './components/player/player.component';
 import {PlayerAlbumComponent} from './components/player-album/player-album.component';
@@ -38,13 +26,10 @@ import {SingerDetailComponent} from './components/singer-detail/singer-detail.co
 import {ListVideoComponent} from './components/list-video/list-video.component';
 import {KeengRoutingModule} from "./routes/keeng.routes";
 import {CategoryComponent} from './components/category/category.component';
-
 import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
-import { VideoComponent } from './directives/video/video.component';
-import { VideoDirective } from './directives/video.directive';
 
 @NgModule({
   declarations: [
@@ -52,12 +37,6 @@ import { VideoDirective } from './directives/video.directive';
     SingerComponent,
 
     ForcePipe,
-    HeroDetailComponent,
-    HeroComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    HeroSearchComponent,
-    KeengComponent,
     PlayerComponent,
     PlayerAlbumComponent,
     PlayerChartsComponent,
@@ -76,16 +55,11 @@ import { VideoDirective } from './directives/video.directive';
     ListSongComponent,
     ListVideoComponent,
     CategoryComponent,
-    VideoComponent,
-    VideoDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    // AppRoutingModule,
-    // InMemoryWebApiModule.forRoot(InMemoryDataService),
-    //MaterialModule.forRoot(),
     CarouselModule.forRoot(),
     KeengRoutingModule,
     VgCoreModule,
@@ -93,7 +67,7 @@ import { VideoDirective } from './directives/video.directive';
     VgOverlayPlayModule,
     VgBufferingModule
   ],
-  providers: [HeroService, HeroSearchService, SingerService, KeengService],
+  providers: [KeengService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

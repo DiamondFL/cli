@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {SingerService} from "../../services/singer.service";
 import {Singer} from "../../database/entities/singer";
 
 @Component({
@@ -9,15 +8,10 @@ import {Singer} from "../../database/entities/singer";
 })
 export class SingerComponent implements OnInit {
   singers: Singer[] = [];
-  constructor(
-    private singerService: SingerService
-  ) { }
+  constructor( ) { }
 
   ngOnInit() {
-    this.singerService.index().then(data => {
-      this.singers = data;
-      console.log(data);
-    } )
+
   }
 
 }
