@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {KeengService} from "../../services/keeng.service";
+import {VIDEO} from "../../database/seeds/video";
 
 @Component({
   selector: 'app-list-video',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-video.component.css']
 })
 export class ListVideoComponent implements OnInit {
-
-  constructor() { }
+  hotVideos: any[];
+  newVideos: any[];
+  constructor(private keengService: KeengService) { }
 
   ngOnInit() {
+    this.hotVideos = VIDEO;
+    this.newVideos = VIDEO;
   }
 
 }

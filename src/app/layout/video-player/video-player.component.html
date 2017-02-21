@@ -1,0 +1,43 @@
+<div class="player-video-keeng">
+  <div class="player-video-playing">
+    <vg-player>
+      <vg-overlay-play></vg-overlay-play>
+      <vg-buffering></vg-buffering>
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
+      <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-playback-button></vg-playback-button>
+        <!--<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>-->
+        <!--<vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>-->
+        <!--<vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>-->
+        <vg-track-selector></vg-track-selector>
+        <!--<vg-mute></vg-mute>-->
+        <vg-volume></vg-volume>
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+        <vg-fullscreen></vg-fullscreen>
+      </vg-controls>
+      <!-- #media id="singleVideo" preload="auto" crossorigin-->
+      <video vgMedia #media style="height: 100%; width: 100%" preload="auto" autoplay="true">
+        <source [src]="video.file" type="video/mp4">
+      </video>
+    </vg-player>
+  </div>
+  <div class="player-video-info">
+    <h3 class="video-info-h3">
+      {{video.name}}
+    </h3>
+    <p class="video-info-p"><a routerLink="/singer-detail">{{video.singer_name}}</a> <span class="video-info-view">312.234</span></p>
+  </div>
+  <div class="player-song-tool">
+    <div class="song-tool-item"><a><img src="assets/images/ver4_10_b.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_11_b.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_12_b.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_13_b.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_14_b.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30" /></a></div>
+    <div class="clear"></div>
+  </div>
+</div>

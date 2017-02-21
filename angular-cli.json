@@ -20,12 +20,11 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "assets/css/owl.carousel.min.css",
-        "assets/css/player.css",
-        "assets/css/style.css",
-        "assets/css/swiper.min.css"
+        "assets/css/style.css"
       ],
       "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

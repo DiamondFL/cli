@@ -1,0 +1,6 @@
+<div class="keeng-topic-wrap">
+  <a routerLink="/topic-detail" *ngFor="let topic of topics" class="keeng-topic-item">
+    <img src="{{ topic.image }}"/>
+    <span>{{ topic.name }}</span>
+  </a>
+</div>

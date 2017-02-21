@@ -10,15 +10,15 @@
         <a>NHẠC</a>
       </h3>
       <div class="menu-nhac-wrap">
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_17.png" height="20" /> Bài hát</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_18.png" height="20" /> Video</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_19.png" height="20" /> Album</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_20.png" height="20" /> BXH</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_21.png" height="20" /> Radio</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_22.png" height="20" /> Thể loại</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_23.png" height="20" /> Nghệ sĩ</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_24.png" height="20" /> Chủ đề</a>
-        <a class="keeng-menu-tag"><img src="assets/images/ver4_25.png" height="20" /> Keeng TV</a>
+        <a routerLink="/song" class="keeng-menu-tag"><img src="assets/images/ver4_17.png" height="20" /> Bài hát</a>
+        <a routerLink="/video" class="keeng-menu-tag"><img src="assets/images/ver4_18.png" height="20" /> Video</a>
+        <a routerLink="/album" class="keeng-menu-tag"><img src="assets/images/ver4_19.png" height="20" /> Album</a>
+        <a routerLink="/chart" class="keeng-menu-tag"><img src="assets/images/ver4_20.png" height="20" /> BXH</a>
+        <a routerLink="/radio" class="keeng-menu-tag"><img src="assets/images/ver4_21.png" height="20" /> Radio</a>
+        <a routerLink="/category" class="keeng-menu-tag"><img src="assets/images/ver4_22.png" height="20" /> Thể loại</a>
+        <a routerLink="/singer" class="keeng-menu-tag"><img src="assets/images/ver4_23.png" height="20" /> Nghệ sĩ</a>
+        <a routerLink="/topic" class="keeng-menu-tag"><img src="assets/images/ver4_24.png" height="20" /> Chủ đề</a>
+        <a routerLink="/liveTv" class="keeng-menu-tag"><img src="assets/images/ver4_25.png" height="20" /> Keeng TV</a>
       </div>
     </div>
     <div class="keeng-menu-nhac">
@@ -66,7 +66,13 @@
       </ul>
     </div>
   </div>
-  <router-outlet></router-outlet>
+  <div id="body">
+    <router-outlet></router-outlet>
+    <div class="app-keeng">
+      <h3 class="app-keeng-h3">Trải nghiệm tốt hơn với ứng dụng Keeng</h3>
+      <p class="app-keeng-p"><a><img src="assets/images/ver4_06.png" width="96" /></a><a><img src="assets/images/ver4_07.png" width="96" /></a><a><img src="assets/images/ver4_08.png" width="96" /></a></p>
+    </div>
+  </div>
   <div id="footer">
     <div class="footer-cate">
       <h3 class="footer-cate-h3"><a>NHẠC</a></h3>
@@ -85,6 +91,26 @@
         <li class="footer-cate-li"><a>Hài ước</a></li>
         <li class="footer-cate-li"><a>Viễn Tưởng</a></li>
       </ul>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="staticModal.show()">Static modal</button>
+
+  <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+       tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Static modal</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          This is static modal, backdrop click will not close it.
+          Click <b>&times;</b> to close modal.
+        </div>
+      </div>
     </div>
   </div>
 </div>

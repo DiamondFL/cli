@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {VIDEO} from "../../database/seeds/video";
 import {video} from "../../database/entities/video";
 import {FEELING} from "../../database/seeds/feeling";

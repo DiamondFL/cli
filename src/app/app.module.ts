@@ -30,6 +30,16 @@ import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
+import { VideoPlayerComponent } from './layout/video-player/video-player.component';
+import { AudioPlayerComponent } from './layout/audio-player/audio-player.component';
+import { AudioListComponent } from './layout/audio-list/audio-list.component';
+import { VideoListComponent } from './layout/video-list/video-list.component';
+import { FeelingComponent } from './layout/feeling/feeling.component';
+import { AlbumListComponent } from './layout/album-list/album-list.component';
+import { MediaHotComponent } from './layout/media-hot/media-hot.component';
+import { TopicListComponent } from './layout/topic-list/topic-list.component';
+import { FilmListComponent } from './layout/film-list/film-list.component';
+import { ModalModule } from 'ng2-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -55,12 +65,22 @@ import {VgBufferingModule} from 'videogular2/buffering';
     ListSongComponent,
     ListVideoComponent,
     CategoryComponent,
+    VideoPlayerComponent,
+    AudioPlayerComponent,
+    AudioListComponent,
+    VideoListComponent,
+    FeelingComponent,
+    AlbumListComponent,
+    MediaHotComponent,
+    TopicListComponent,
+    FilmListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     CarouselModule.forRoot(),
+    ModalModule.forRoot(),
     KeengRoutingModule,
     VgCoreModule,
     VgControlsModule,

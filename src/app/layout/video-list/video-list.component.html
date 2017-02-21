@@ -1,0 +1,9 @@
+<div class="keeng-video-wrap">
+  <div *ngFor="let video of videos" class="keeng-video-item">
+    <a routerLink="/player-video" class="keeng-video-img"> <img src="{{video.image}}" /> </a>
+    <div class="keeng-video-info">
+      <h3 class="video-info-h3"> <a>{{video.name}}</a> </h3>
+      <p class="video-info-singer"><a routerLink="/singer-detail">{{video.singer_name}}</a></p>
+    </div>
+  </div>
+</div>

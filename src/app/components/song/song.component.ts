@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SONG} from "../../database/seeds/song";
 
 @Component({
   selector: 'app-song',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./song.component.css']
 })
 export class SongComponent implements OnInit {
-
+  newSongs: any[];
+  hotSongs: any[];
   constructor() { }
 
   ngOnInit() {
+    this.hotSongs = SONG;
+    this.newSongs = SONG;
   }
 
 }

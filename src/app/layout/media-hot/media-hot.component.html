@@ -1,0 +1,73 @@
+<div *ngFor="let itemHot of itemHots" id="box-hot" class="keeng-hot-detail">
+  <div class="keeng-video">
+    <div class="kv-content">
+      <a class="kv-lnk" routerLink="/player-video">
+        <img src="{{itemHot.video.image}}" title="{{itemHot.video.name}}" alt="{{itemHot.video.name}}"
+             class="kv-img">
+        <span class="kv-sp-icon">
+              <img class="kv-img-icon" src="http://vip.keeng.vn/v3/images/ver3_08.png" height="59">
+          </span>
+      </a>
+      <div class="kv-info">
+        <h3 class="kv-info-h3">
+          <a routerLink="/player-video">
+            {{itemHot.video.name}}
+          </a>
+        </h3>
+        <p class="kv-info-p">
+          <a routerLink="/singer-detail" class="kv-info-singer">{{itemHot.video.singer_name}}</a>
+          <span class="kv-info-view">
+              <img src="http://vip.keeng.vn/v3/images/ver3_09.png" height="10"> {{itemHot.video.listen_no}}
+            </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="keeng-album">
+    <div class="ka-content">
+      <a routerLink="/player-album" class="ka-lnk">
+        <img
+          src="{{itemHot.album.image}}"
+          title="{{itemHot.album.name}}">
+      </a>
+      <div class="ka-info">
+        <h3 class="ka-info-h3">
+          <a routerLink="/player-album">{{itemHot.album.name}}</a>
+        </h3>
+        <p class="ka-info-singer">
+          <a routerLink="/singer-detail">
+            {{itemHot.album.singer_name}}
+          </a>
+        </p>
+        <span class="ka-info-view">
+            <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.album.listen_no}}
+          </span>
+      </div>
+    </div>
+  </div>
+  <div class="keeng-song">
+    <div class="ka-content">
+      <a class="ka-lnk" routerLink="/player">
+        <img src="{{itemHot.song.image}}" title="{{itemHot.song.name}}" alt="{{itemHot.song.name}}">
+      </a>
+      <div class="ka-info">
+        <h3 class="ka-info-h3">
+          <a routerLink="/player"><span class="sp-exclusive">ĐỘC QUYỀN</span> {{itemHot.song.name}} </a>
+        </h3>
+        <p class="ka-info-singer">
+          <a routerLink="/singer-detail">
+            {{itemHot.song.singer_name}}
+          </a>
+        </p>
+        <span class="ka-info-view">
+            <img src="http://vip.keeng.vn/v3/images/ver3_09_b.png" height="10">{{itemHot.song.listen_no}}
+          </span>
+      </div>
+    </div>
+  </div>
+  <p class="more-keeng-view" id="blockPlaylistHot_1" style="display: none;">
+    <a href="javascript:displayBoxHot(1);">
+      <img src="http://vip.keeng.vn/v3/images/ver3_12.png" height="7">
+    </a>
+  </p>
+</div>

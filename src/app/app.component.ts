@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {KeengService} from "./services/keeng.service";
+import { ModalDirective } from 'ng2-bootstrap/modal';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,17 @@ export class AppComponent implements OnInit {
   constructor(private keengService: KeengService) {
 
   }
+
+  @ViewChild('childModal') public childModal:ModalDirective;
+
+  public showChildModal():void {
+    this.childModal.show();
+  }
+
+  public hideChildModal():void {
+    this.childModal.hide();
+  }
+
   ngOnInit(): void {
     this.keengService.common().then(
       data => {
@@ -24,14 +36,14 @@ export class AppComponent implements OnInit {
         console.log(error);
       }
     );
-    this.keengService.linkFooter().then(
-      data => {
-        this.linkFooter = data;
-        console.log(data);
-      },
-      error => {
-        console.log(error);
-      }
-    )
+    // this.keengService.linkFooter().then(
+    //   data => {
+    //     this.linkFooter = data;
+    //     console.log(data);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // )
   }
 }
