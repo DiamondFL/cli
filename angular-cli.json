@@ -20,7 +20,8 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "assets/css/style.css"
+        "assets/css/style.css",
+        "assets/css/player.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",

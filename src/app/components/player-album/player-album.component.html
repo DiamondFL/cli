@@ -1,36 +1,5 @@
-<div class="player-song">
-  <div class="player-song-content">
-    <h3 class="song-content-h3">Những bài hát hay nhất của Noo Phước Thịnh</h3>
-    <p class="song-content-p"><a>Noo Phước Thịnh</a> ft <a>nhiều ca sĩ</a></p>
-    <span class="song-content-sp"><img src="assets/images/ver4_09.png" width="12"/> 123.456</span>
-  </div>
-  <app-audio-player [song]="song"></app-audio-player>
-  <div class="player-song-tool">
-    <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_12.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_13.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_14.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30" /></a></div>
-    <div class="clear"></div>
-  </div>
-</div>
-<div class="keeng-song-lyric">
-  <div class="song-lyric-content">
-    1. Nhìn vào sâu đôi mắt<br />
-    Em có biết trong anh muốn nói điều gì<br />
-    Rằng từ lâu đôi ta đã thuộc về nhau.<br />
-    Người làm anh gục ngã<br />
-    Từ ánh mắt, đôi môi, cử chỉ, mỉm cười<br />
-    Rằng từ đây anh muốn bên em suốt đời.<br />
-  </div>
-  <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12"></a> </p>
-</div>
-<div class="keeng-song">
-  <h2 class="keeng-h2-title"><a>BÀI HÁT</a></h2>
-  <app-audio-list [songs]="songs" ></app-audio-list>
-  <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
-</div>
+<app-d-player [songs]="songs"></app-d-player>
+
 <div class="keeng-album">
   <h2 class="keeng-h2-title"><a>ALBUM</a></h2>
   <app-album-list [albums]="albums"></app-album-list>

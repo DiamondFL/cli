@@ -1,0 +1,24 @@
+nav {
+
+}
+#defaultBar {
+  position: relative;
+  background: #606060;
+  height: 5px;
+}
+#progressBar {
+  position: absolute;
+  height: 5px;
+  background: #7aaf14;
+  width: 0px;
+}
+div.progress {
+  margin-bottom: 5px;
+}
+#muteButton:active, #playButton:active {
+  position: relative;
+  top: 2px;
+}
+#currentTime, #fullDuration {
+  font-size: 11px;
+}

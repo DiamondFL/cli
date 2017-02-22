@@ -1,0 +1,74 @@
+<div class="player-song">
+  <div class="player-song-content">
+    <h3 class="song-content-h3">Những bài hát hay nhất của Noo Phước Thịnh</h3>
+    <p class="song-content-p"><a>Noo Phước Thịnh</a> ft <a>nhiều ca sĩ</a></p>
+    <span class="song-content-sp"><img src="assets/images/ver4_09.png" width="12"/> 123.456</span>
+  </div>
+  <div class="player-song-playing">
+    <div class="player-plist">
+      <div class="hide-html5">
+        <audio autoplay="autoplay" preload="" autobuffer="" controls="controls" id="audio"
+               src="{{song.file}}">
+          <source type="audio/mpeg"
+                  src="{{song.file}}">
+        </audio>
+      </div>
+      <div class="pdplay">
+        <div id="progress">
+          <div id="progress_box" (click)="changeBar($event)">
+            <div id="audioSlider"></div>
+            <div id="load_progress">
+              <div id="play_progress"></div>
+            </div>
+          </div>
+        </div>
+        <div id="play_time">
+          <div id="current_time_display">00:00</div>
+        </div>
+        <div class="pdcontrol">
+          <div id="prev"></div>
+          <div (click)="togglePlay()" [class.play]="playClass" class="pause control" id="play"></div>
+          <div id="next" (click)="nextTrack()"></div>
+        </div>
+      </div>
+      <div class="play-song">
+        <span id="song-playing">{{song.name}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="player-song-tool">
+    <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_12.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_13.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_14.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30" /></a></div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="keeng-song-lyric">
+  <div class="song-lyric-content">
+    1. Nhìn vào sâu đôi mắt<br />
+    Em có biết trong anh muốn nói điều gì<br />
+    Rằng từ lâu đôi ta đã thuộc về nhau.<br />
+    Người làm anh gục ngã<br />
+    Từ ánh mắt, đôi môi, cử chỉ, mỉm cười<br />
+    Rằng từ đây anh muốn bên em suốt đời.<br />
+  </div>
+  <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12"></a> </p>
+</div>
+
+<div class="keeng-song">
+  <h2 class="keeng-h2-title"><a>BÀI HÁT</a></h2>
+  <div class="keeng-song-wrap">
+    <div *ngFor="let track of songs" [class.playing]="track.id === song.id" class="keeng-song-item">
+      <a (click)="changeSong(track)" class="keeng-song-img"><img src="{{track.image}}"/></a>
+      <div class="keeng-song-info">
+        <h3 class="song-info-h3"><a (click)="changeSong(track)"> {{track.name}}</a></h3>
+        <p class="song-info-singer"><a routerLink="/singer-detail">{{track.singer_name}}</a></p>
+      </div>
+    </div>
+  </div>
+  <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+</div>
+

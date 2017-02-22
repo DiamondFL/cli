@@ -13,13 +13,14 @@ export class PlayerAlbumComponent implements OnInit {
   songs: any[];
   albums: any[];
   feelings : any[];
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
     this.song = SONG[0];
     this.songs = SONG;
     this.albums = ALBUM;
     this.feelings = FEELING;
   }
 
+  ngOnInit() {
+
+  }
 }

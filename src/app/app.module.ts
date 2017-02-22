@@ -40,6 +40,8 @@ import { MediaHotComponent } from './layout/media-hot/media-hot.component';
 import { TopicListComponent } from './layout/topic-list/topic-list.component';
 import { FilmListComponent } from './layout/film-list/film-list.component';
 import { ModalModule } from 'ng2-bootstrap/modal';
+import { SongsInAlbumComponent } from './layout/songs-in-album/songs-in-album.component';
+import { DPlayerComponent } from './layout/d-player/d-player.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +76,8 @@ import { ModalModule } from 'ng2-bootstrap/modal';
     MediaHotComponent,
     TopicListComponent,
     FilmListComponent,
+    SongsInAlbumComponent,
+    DPlayerComponent,
   ],
   imports: [
     BrowserModule,
