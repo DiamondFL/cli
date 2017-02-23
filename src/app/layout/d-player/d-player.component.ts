@@ -13,13 +13,13 @@ export class DPlayerComponent implements OnInit {
   player: any = {};
   playClass: boolean = false;
   constructor() {
-    this.player.track = new Audio();
-    //this.player.track = document.getElementById('audio');
+   // this.player.track = new Audio();
   }
 
   ngOnInit() {
     this.song = this.songs[this.trackNo];
-    // this.player.track.src = this.song.file;
+    this.player.track = document.getElementById('audio');
+    this.player.track.src = this.song.file;
     // this.player.track.play();
     this.player.playBtn = document.getElementById('play');
     this.player.backBtn = document.getElementById('prev');
@@ -29,25 +29,32 @@ export class DPlayerComponent implements OnInit {
     this.player.updateTime = 0;
     this.player.progressBar = document.getElementById('play_progress');
     this.player.progressBuffer = document.getElementById("load_progress");
-    this.player.updateTime = setInterval(() => this.updateTrack(), 500);
-
+    this.player.updateTime = setInterval(() => this.updateTrack(), 1000);
   }
   pad(d) {
   return (d < 10) ? '0' + d.toString() : d.toString();
 };
   updateTrack () {
+    console.log(this.player.track.currentTime)
     this.player.barSize = this.player.bar.offsetWidth;
     if (this.player.track !== undefined && !this.player.track.ended) {
+
       let size = this.player.track.currentTime * 100 / this.player.track.duration;
       this.player.progressBar.style.width = Math.round(size) + "%";
+
+      let sizePx = this.player.track.currentTime * this.player.barSize / this.player.track.duration;
+      this.player.progressBar.style.width = Math.round(sizePx) + "px";
+
       let playedMinutes = this.pad(Math.round(this.player.track.currentTime / 60));
       let playedSeconds = this.pad(Math.round(this.player.track.currentTime % 60));
       this.player.currentDuration.innerHTML = playedMinutes + ':' + playedSeconds;
       // console.log(this.player.track.buffered.end(this.player.track.buffered.length -1));
     } else {
       this.player.currentDuration.innerHTML = '00.00';
-      this.player.playBtn.innerHTML = '<i class="glyphicon glyphicon-play"></i>';
       this.player.progressBar.style.width = '0px';
+      window.clearInterval(this.player.updateTime);
+    }
+    if(document.getElementById('audio') === null) {
       window.clearInterval(this.player.updateTime);
     }
   };
@@ -96,7 +103,7 @@ export class DPlayerComponent implements OnInit {
   changeSong(event: any) {
     this.song = event;
     this.player.track.src = this.song.file;
-    this.player.track.play();
+    //this.player.track.play();
   }
   destruct() {
     this.player = {};

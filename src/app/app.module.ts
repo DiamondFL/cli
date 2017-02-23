@@ -26,10 +26,10 @@ import {SingerDetailComponent} from './components/singer-detail/singer-detail.co
 import {ListVideoComponent} from './components/list-video/list-video.component';
 import {KeengRoutingModule} from "./routes/keeng.routes";
 import {CategoryComponent} from './components/category/category.component';
-import {VgCoreModule} from 'videogular2/core';
-import {VgControlsModule} from 'videogular2/controls';
-import {VgOverlayPlayModule} from 'videogular2/overlay-play';
-import {VgBufferingModule} from 'videogular2/buffering';
+// import {VgCoreModule} from 'videogular2/core';
+// import {VgControlsModule} from 'videogular2/controls';
+// import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+// import {VgBufferingModule} from 'videogular2/buffering';
 import { VideoPlayerComponent } from './layout/video-player/video-player.component';
 import { AudioPlayerComponent } from './layout/audio-player/audio-player.component';
 import { AudioListComponent } from './layout/audio-list/audio-list.component';
@@ -86,10 +86,10 @@ import { DPlayerComponent } from './layout/d-player/d-player.component';
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     KeengRoutingModule,
-    VgCoreModule,
-    VgControlsModule,
-    VgOverlayPlayModule,
-    VgBufferingModule
+    // VgCoreModule,
+    // VgControlsModule,
+    // VgOverlayPlayModule,
+    // VgBufferingModule
   ],
   providers: [KeengService],
   bootstrap: [AppComponent]
