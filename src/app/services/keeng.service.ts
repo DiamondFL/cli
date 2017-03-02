@@ -27,6 +27,13 @@ export class KeengService {
       .then(res => res.json())
       .catch(this.handleError);
   }
+  home() {
+    let url = API_URL + 'apicommon/pub/home';
+    return this.http.get(url)
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
   banner() {
     let url = API_URL + 'processBanner?type=wap&code=&is_vip=false';
     return this.http.get(url)

@@ -2,7 +2,7 @@
   <carousel>
     <slide *ngFor="let flash of flashHots">
       <a href="{{flash.link}}">
-        <img class="img-responsive" style="width: 100%" src="{{IMAGE_DOMAIN + flash.image_path}}" alt="{{flash.title}}">
+        <img class="img-responsive" style="width: 100%" src="{{IMAGE_DOMAIN + flash.images}}" alt="{{flash.title}}">
       </a>
     </slide>
   </carousel>
@@ -12,10 +12,10 @@
   <app-album-list [albums]="albums"></app-album-list>
   <p class="keeng-more-p"><a routerLink="/album"><img src="assets/images/ver4_05.png" width="12"/></a></p>
 </div>
-<div class="keeng-propose">
-  <h2 class="keeng-h2-title"><a>Nhạc HOT</a></h2>
-  <app-media-hot [itemHots]="itemHots"></app-media-hot>
-</div>
+<!--<div class="keeng-propose">-->
+  <!--<h2 class="keeng-h2-title"><a>Nhạc HOT</a></h2>-->
+  <!--<app-media-hot [itemHots]="itemHots"></app-media-hot>-->
+<!--</div>-->
 <div class="keeng-song">
   <h2 class="keeng-h2-title"><a>BÀI HÁT HOT</a></h2>
   <app-audio-list [songs]="songs"></app-audio-list>
@@ -26,16 +26,16 @@
   <app-video-list [videos]="videos"></app-video-list>
   <p class="keeng-more-p"><a routerLink="/list-video"><img src="assets/images/ver4_05.png" width="12"/></a></p>
 </div>
-<div class="keeng-topic">
-  <h2 class="keeng-h2-title"><a>DANH SÁCH CHỦ ĐỀ</a></h2>
-  <app-topic-list [topics]="topics"></app-topic-list>
-  <p class="keeng-more-p"><a routerLink="/topic"><img src="assets/images/ver4_05.png" width="12"/></a></p>
-</div>
-<div class="keeng-video keeng-phim">
-  <h2 class="keeng-h2-title"><a>PHIM HOT</a></h2>
-  <app-film-list [films]="films"></app-film-list>
-  <p class="keeng-more-p"><a routerLink="/topic"><img src="assets/images/ver4_05.png" width="12"/></a></p>
-</div>
+<!--<div class="keeng-topic">-->
+  <!--<h2 class="keeng-h2-title"><a>DANH SÁCH CHỦ ĐỀ</a></h2>-->
+  <!--<app-topic-list [topics]="topics"></app-topic-list>-->
+  <!--<p class="keeng-more-p"><a routerLink="/topic"><img src="assets/images/ver4_05.png" width="12"/></a></p>-->
+<!--</div>-->
+<!--<div class="keeng-video keeng-phim">-->
+  <!--<h2 class="keeng-h2-title"><a>PHIM HOT</a></h2>-->
+  <!--<app-film-list [films]="films"></app-film-list>-->
+  <!--<p class="keeng-more-p"><a routerLink="/topic"><img src="assets/images/ver4_05.png" width="12"/></a></p>-->
+<!--</div>-->
 <!--<div class="keeng-cate-hot">-->
   <!--<h2 class="keeng-h2-title"><a>CHUYÊN MỤC HOT</a></h2>-->
   <!--<div class="cate-hot-wrap" id="cate_hot_swiper">-->

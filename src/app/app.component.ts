@@ -27,15 +27,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.keengService.common().then(
-      data => {
-        this.common = data;
-        console.log(data);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    // this.keengService.common().then(
+    //   data => {
+    //     this.common = data;
+    //     console.log(data);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
     // this.keengService.linkFooter().then(
     //   data => {
     //     this.linkFooter = data;
