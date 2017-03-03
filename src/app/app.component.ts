@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {KeengService} from "./services/keeng.service";
 import { ModalDirective } from 'ng2-bootstrap/modal';
+import {Router, NavigationEnd} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,11 @@ import { ModalDirective } from 'ng2-bootstrap/modal';
 })
 
 export class AppComponent implements OnInit {
-  common: any[] = [];
-  linkFooter: any[] = [];
-  constructor(private keengService: KeengService) {
+
+  constructor(
+    private keengService: KeengService,
+    private router: Router
+  ) {
 
   }
 
@@ -27,23 +30,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.keengService.common().then(
-    //   data => {
-    //     this.common = data;
-    //     console.log(data);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
-    // this.keengService.linkFooter().then(
-    //   data => {
-    //     this.linkFooter = data;
-    //     console.log(data);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // )
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      document.body.scrollTop = 0;
+    });
   }
 }

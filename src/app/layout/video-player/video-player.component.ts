@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {video} from "../../database/entities/video";
+import {VIDEO_DOMAIN} from "../../configs/app.config";
 
 @Component({
   selector: 'app-video-player',
@@ -8,9 +9,15 @@ import {video} from "../../database/entities/video";
 })
 export class VideoPlayerComponent implements OnInit {
   @Input() video: video;
-  constructor() { }
+
+  VIDEO_DOMAIN = VIDEO_DOMAIN;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
+    console.log(this.video);
   }
 
 }

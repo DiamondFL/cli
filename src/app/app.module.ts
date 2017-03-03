@@ -42,6 +42,8 @@ import { FilmListComponent } from './layout/film-list/film-list.component';
 import { ModalModule } from 'ng2-bootstrap/modal';
 import { SongsInAlbumComponent } from './layout/songs-in-album/songs-in-album.component';
 import { DPlayerComponent } from './layout/d-player/d-player.component';
+import { AlbumPlayerComponent } from './layout/album-player/album-player.component';
+import {MediaService} from "./services/media.service";
 
 @NgModule({
   declarations: [
@@ -78,6 +80,7 @@ import { DPlayerComponent } from './layout/d-player/d-player.component';
     FilmListComponent,
     SongsInAlbumComponent,
     DPlayerComponent,
+    AlbumPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,7 @@ import { DPlayerComponent } from './layout/d-player/d-player.component';
     VgOverlayPlayModule,
     VgBufferingModule
   ],
-  providers: [KeengService],
+  providers: [KeengService, MediaService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

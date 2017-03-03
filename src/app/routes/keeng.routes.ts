@@ -28,7 +28,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'album', component: AlbumComponent
+    path: 'album.html', component: AlbumComponent
   },
   {
     path: 'category', component: CategoryComponent
@@ -49,7 +49,7 @@ const routes: Routes = [
     path: 'player', component: PlayerComponent
   },
   {
-    path: 'player-album', component: PlayerAlbumComponent
+    path: ':slug/:id/player-album.html', component: PlayerAlbumComponent
   },
   {
     path: 'player-chart', component: PlayerChartsComponent
@@ -58,7 +58,7 @@ const routes: Routes = [
     path: 'player-livetv', component: PlayerLivetvComponent
   },
   {
-    path: 'player-video', component: PlayerVideoComponent
+    path: ':id/video-player.html', component: PlayerVideoComponent
   },
   {
     path: 'popup-login', component: PopupLoginComponent
@@ -79,9 +79,11 @@ const routes: Routes = [
     path: 'topic-detail', component: TopicDetailComponent
   }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: []
 })
+
 export class KeengRoutingModule {}

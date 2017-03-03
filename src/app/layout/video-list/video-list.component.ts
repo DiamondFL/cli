@@ -9,9 +9,13 @@ import {IMAGE_DOMAIN} from "../../configs/app.config";
 export class VideoListComponent implements OnInit {
 
   IMAGE_DOMAIN: string = IMAGE_DOMAIN;
-  constructor() { }
+
+  constructor( ) { }
+
   @Input() videos: any[];
+
   ngOnInit() {
+
   }
 
 }

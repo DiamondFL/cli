@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {KeengService} from "../../services/keeng.service";
-import {VIDEO} from "../../database/seeds/video";
 
 @Component({
   selector: 'app-list-video',
@@ -13,8 +12,14 @@ export class ListVideoComponent implements OnInit {
   constructor(private keengService: KeengService) { }
 
   ngOnInit() {
-    this.hotVideos = VIDEO;
-    this.newVideos = VIDEO;
+    document.body.scrollTop = 0;
+    this.keengService.videoList().then(
+      data => {
+        console.log(data);
+        this.hotVideos = data.hotVideos;
+        this.newVideos = data.newVideos;
+      }
+    );
   }
 
 }

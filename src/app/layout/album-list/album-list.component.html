@@ -1,9 +1,9 @@
 <div class="keeng-album-wrap">
   <div *ngFor="let album of albums" class="keeng-album-item">
-    <a routerLink="/player-album" class="keeng-album-img"> <img src="{{album.image}}"/> <span
+    <a routerLink="/{{album.slug}}/{{album.id}}/player-album.html" class="keeng-album-img"> <img src="{{album.image}}"/> <span
       class="album-shadow"></span> </a>
     <div class="keeng-album-info">
-      <h3 class="album-info-h3"><a routerLink="/player-album">{{album.name}}</a></h3>
+      <h3 class="album-info-h3"><a routerLink="/{{album.slug}}/{{album.id}}/player-album.html">{{album.name}}</a></h3>
       <p class="album-info-singer"><a routerLink="/singer-detail">{{album.singer_name}}</a></p>
     </div>
   </div>

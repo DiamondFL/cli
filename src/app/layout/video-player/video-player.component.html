@@ -1,4 +1,4 @@
-<div class="player-video-keeng">
+<div class="player-video-keeng" *ngIf="video">
   <div class="player-video-playing">
     <vg-player>
       <vg-overlay-play></vg-overlay-play>
@@ -21,7 +21,7 @@
       </vg-controls>
       <!-- #media id="singleVideo" preload="auto" crossorigin-->
       <video vgMedia #media style="height: 100%; width: 100%" preload="auto" autoplay="true">
-        <source [src]="video.file" type="video/mp4">
+        <source [src]="VIDEO_DOMAIN + video['path']" type="video/mp4">
       </video>
     </vg-player>
   </div>
