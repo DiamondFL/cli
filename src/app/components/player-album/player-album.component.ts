@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FEELING} from "../../database/seeds/feeling";
 import {KeengService} from "../../services/keeng.service";
-import {ActivatedRoute} from "@angular/router";
-import {IMAGE_DOMAIN} from "../../configs/app.config";
-import {MediaService} from "../../services/media.service";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {normalizeAudioSrc, normalizeImageSrc, normalizeSrc} from "../../helpers/standlizied";
 
 @Component({
   selector: 'app-player-album',
@@ -18,27 +17,35 @@ export class PlayerAlbumComponent implements OnInit {
   songs: any[];
 
   constructor(
+    private router: Router,
     private keengService: KeengService,
     private route: ActivatedRoute,
-    private mediaService: MediaService
   ) {
     this.feelings = FEELING;
   }
 
   ngOnInit() {
-    let id = this.route.snapshot.params['id'];
-    this.keengService.albumPlayer(id).then(
-      data => {
-        console.log(data);
-        this.album = data.album;
-        this.songs = data.tracks;
-        this.song = this.songs[0];
-
-        this.albums = data.relatedAlbums;
-        for(let i in this.albums) {
-          this.albums[i].image = IMAGE_DOMAIN + JSON.parse(this.albums[i].images)[0]['origin'];
-        }
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
       }
-    );
+      let id = this.route.snapshot.params['id'];
+      this.keengService.albumPlayer(id).then(
+        res => {
+          let data:any = res['data'];
+          let headers:any = res['headers'];
+          let audioSrc = [
+            ['audio', headers['audio']]
+          ];
+          let albumSrc = [
+            ['image', headers['image']]
+          ];
+          this.album = data.album;
+          this.songs = normalizeSrc(audioSrc, data.tracks);
+          this.albums = normalizeSrc(albumSrc, data.relatedAlbums);
+          this.song = this.songs[0];
+        }
+      );
+    });
   }
 }

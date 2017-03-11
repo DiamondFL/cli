@@ -1,8 +1,8 @@
 <div class="keeng-song-wrap">
   <div *ngFor="let song of songs" class="keeng-song-item">
-    <a routerLink="/player" class="keeng-song-img"><img src="{{song.image}}"/></a>
+    <a routerLink="/{{song.slug}}/{{song.id}}/song-player.html" class="keeng-song-img"><img src="{{song.image}}"/></a>
     <div class="keeng-song-info">
-      <h3 class="song-info-h3"><a routerLink="/player"> {{song.name}}</a></h3>
+      <h3 class="song-info-h3"><a routerLink="/{{song.slug}}/{{song.id}}/song-player.html"> {{song.name}}</a></h3>
       <p class="song-info-singer"><a routerLink="/singer-detail">{{song.singer_name}}</a></p>
     </div>
   </div>

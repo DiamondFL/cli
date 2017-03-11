@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {KeengService} from "../../services/keeng.service";
 import {IMAGE_DOMAIN} from "../../configs/app.config";
+import {normalizeSrc} from "../../helpers/standlizied";
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   videos: any[] = [];
   flashHots: any[] = [];
   IMAGE_DOMAIN: string = IMAGE_DOMAIN;
+
   constructor(private keengService: KeengService) {
 
   }
@@ -21,15 +23,25 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.keengService.home()
       .then(
-        data => {
-          this.albums = data.hotAlbums;
-          for(let i in this.albums) {
-            this.albums[i].image = IMAGE_DOMAIN + JSON.parse(data.hotAlbums[i].images)[0]['origin'];
-          }
-          this.videos = data.hotVideos;
+        res => {
+          console.log(res);
+          let data = res['data'];
+          let headers = res['headers'];
+          let audioSrc = [
+            ['audio', headers['audio']]
+          ];
+          let albumSrc = [
+            ['image', headers['image']]
+          ];
+          this.albums = normalizeSrc(albumSrc, data.hotAlbums);
+          let videoSrc = [
+            ['video', headers['video']]
+          ];
+
+          this.videos = normalizeSrc(videoSrc, data.hotVideos);
           this.flashHots = data.flashHot;
-          this.albums = data.hotAlbums;
-          this.songs = data.hotTracks;
+          this.songs = normalizeSrc(audioSrc, data.hotTracks);
+          console.log(this.videos);
         }
       );
   }

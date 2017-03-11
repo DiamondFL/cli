@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {video} from "../../database/entities/video";
 import {VIDEO_DOMAIN} from "../../configs/app.config";
+import {MediaService} from "../../services/media.service";
 
 @Component({
   selector: 'app-video-player',
@@ -9,15 +10,22 @@ import {VIDEO_DOMAIN} from "../../configs/app.config";
 })
 export class VideoPlayerComponent implements OnInit {
   @Input() video: video;
-
-  VIDEO_DOMAIN = VIDEO_DOMAIN;
-
-  constructor() {
+  sources: any[];
+  constructor(private mediaService: MediaService) {
 
   }
 
   ngOnInit() {
-    console.log(this.video);
+
   }
 
+  ngOnChanges(changes: any) {
+    if (changes.video.currentValue !== null) {
+      this.mediaService.video(this.video['src']).then(
+        res => {
+          this.sources = res;
+        }
+      );
+    }
+  }
 }

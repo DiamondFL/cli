@@ -2,12 +2,13 @@
   <div class="player-song-content">
     <h3 class="song-content-h3">{{album.name}}</h3>
     <p class="song-content-p"><a>Noo Phước Thịnh</a> ft <a>nhiều ca sĩ</a></p>
-    <span class="song-content-sp"><img src="assets/images/ver4_09.png" width="12"/> {{album.listenNoFake | number}}</span>
+    <span class="song-content-sp"><img src="assets/images/ver4_09.png"
+                                       width="12"/> {{album.listenNoFake | number}}</span>
   </div>
   <div class="player-song-playing">
     <div class="player-plist">
       <div class="hide-html5">
-        <audio autoplay="autoplay" preload="" autobuffer="" id="audio" >
+        <audio autoplay="autoplay" preload="" autobuffer="" id="audio">
           <source type="audio/mpeg">
         </audio>
       </div>
@@ -29,28 +30,28 @@
           <div id="next" (click)="nextTrack()"></div>
         </div>
       </div>
-      <div class="play-song" *ngIf="song !== null">
-        <span id="song-playing">{{song.name}}</span>
+      <div class="play-song" *ngIf="song">
+      <span id="song-playing">{{song.name}}</span>
       </div>
     </div>
   </div>
   <div class="player-song-tool">
-    <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_12.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_13.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_14.png" width="30" /></a></div>
-    <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30" /></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30"/></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30"/></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_12.png" width="30"/></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_13.png" width="30"/></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_14.png" width="30"/></a></div>
+    <div class="song-tool-item"><a><img src="assets/images/ver4_15.png" width="30"/></a></div>
     <div class="clear"></div>
   </div>
 </div>
 <div class="keeng-song-lyric">
-  <div *ngIf="song" class="song-lyric-content" [innerHTML]="song.lyric">
+  <div *ngIf="song" [hidden]="lyricHidden"class="song-lyric-content" [innerHTML]="song.lyric">
   </div>
-  <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12"></a> </p>
+  <p class="keeng-more-p" (click)="toggleLyric()"><a><img src="assets/images/ver4_05.png" width="12"></a></p>
 </div>
 
-<div class="keeng-song" *ngIf="song">
+<div class="keeng-song">
   <h2 class="keeng-h2-title"><a>BÀI HÁT</a></h2>
   <div class="keeng-song-wrap">
     <div *ngFor="let track of songs" [class.playing]="track.id === song.id" class="keeng-song-item">
@@ -61,6 +62,6 @@
       </div>
     </div>
   </div>
-  <p class="keeng-more-p"> <a><img src="assets/images/ver4_05.png" width="12" /></a> </p>
+  <p class="keeng-more-p"><a><img src="assets/images/ver4_05.png" width="12"/></a></p>
 </div>
 

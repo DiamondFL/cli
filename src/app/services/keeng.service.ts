@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {API_URL} from "../configs/app.config";
+import {setHeaders, normalizeResult} from "../helpers/standlizied";
 @Injectable()
 
 export class KeengService {
@@ -17,113 +18,113 @@ export class KeengService {
     let url = API_URL + 'albums';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError)
   }
   albumList() {
     let url = API_URL + 'apicommon/pub/album/list';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   albumPlayer(id: number) {
     let url = API_URL + 'apicommon/pub/album/' + id
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   allData(params: string) {
     let url = API_URL + 'home/alldata' + params;
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError)
-  }
-  common() {
-    let url = API_URL + 'home/commondata';
-    return this.http.get(url)
-      .toPromise()
-      .then(res => res.json())
-      .catch(this.handleError);
   }
   banner() {
     let url = API_URL + 'processBanner?type=wap&code=&is_vip=false';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
+      .catch(this.handleError);
+  }
+  common() {
+    let url = API_URL + 'home/commondata';
+    return this.http.get(url)
+      .toPromise()
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   capcha() {
     let url = API_URL + 'getCaptcha';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   linkFooter() {
     let url = API_URL + 'link-footer';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   charts() {
     let url = API_URL + 'bxh/songs-videos';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   liveTv() {
     let url = API_URL + 'videos/homeTv';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
-  home() {
+  home()  {
     let url = API_URL + 'apicommon/pub/home';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then( res => normalizeResult(res))
       .catch(this.handleError);
   }
-  songDetail(params: string) {
-    let url = API_URL + 'song' + params;
+  songDetail(id: number) {
+    let url = API_URL + 'apicommon/pub/track/' + id;
+    console.log(url);
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   songs(params: string) {
     let url = API_URL + 'song' + params;
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   videos() {
     let url = API_URL + 'homeVideo';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
   videoList() {
     let url = API_URL + '/apicommon/pub/video/list';
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError)
   }
-  videoPlayer(identify: string) {
-    let url = API_URL + 'apicommon/pub/video/' + identify;
+  videoPlayer(id: string) {
+    let url = API_URL + 'apicommon/pub/video/' + id;
     return this.http.get(url)
       .toPromise()
-      .then(res => res.json())
+      .then(res => normalizeResult(res))
       .catch(this.handleError);
   }
-
 }

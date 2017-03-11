@@ -21,7 +21,7 @@
       </vg-controls>
       <!-- #media id="singleVideo" preload="auto" crossorigin-->
       <video vgMedia #media style="height: 100%; width: 100%" preload="auto" autoplay="true">
-        <source [src]="VIDEO_DOMAIN + video['path']" type="video/mp4">
+        <source *ngFor="let item of sources" [src]="item['src']" [type]="item['type']">
       </video>
     </vg-player>
   </div>

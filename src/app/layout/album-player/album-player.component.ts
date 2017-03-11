@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {MediaService} from "../../services/media.service";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-album-player',
@@ -8,30 +9,27 @@ import {MediaService} from "../../services/media.service";
 })
 export class AlbumPlayerComponent implements OnInit {
 
-  @Input() album: any;
+  @Input() album: any = null;
   @Input() songs: any[];
-
-  song: any = null;
+  @Input() song: any;
   trackNo: number = 0;
   player: any = {};
   playClass: boolean = false;
+  lyricHidden: boolean = true;
 
-  constructor(private mediaService: MediaService) {
+  constructor(private router: Router,
+              private mediaService: MediaService,) {
   }
 
   ngOnInit() {
+
+  }
+
+  ngOnChanges(changes: any) {
+    // console.log(changes.song.currentValue.src);
     this.elements();
-    if (this.songs.length > 0) {
-      for (let i in this.songs) {
-        this.mediaService.audio('?' + this.songs[i].path)
-          .then(
-            data => {
-              this.songs[i].src = data;
-              if (i === '0') this.begin();
-            }
-          );
-      }
-    }
+    this.begin(changes.song.currentValue.src);
+
   }
 
   elements() {
@@ -44,18 +42,17 @@ export class AlbumPlayerComponent implements OnInit {
     this.player.updateTime = 0;
     this.player.progressBar = document.getElementById('play_progress');
     this.player.progressBuffer = document.getElementById("load_progress");
-    this.song = this.songs[this.trackNo];
   }
 
-  begin() {
-    this.song.src = 'http://nhachoa.keeng.vn/sas_01/songv3/NamViet0710/Vi_Anh_La_Gio_Edm_Ver.mp3?s=WEB&ot=song&oid=2407862&rt=p';
-    this.player.track.src = this.song.src;
+  begin(data: string) {
+    this.player.track.src = data;
     this.player.updateTime = setInterval(() => this.updateTrack(), 1000);
   }
 
   pad(d) {
     return (d < 10) ? '0' + d.toString() : d.toString();
   };
+
   setProgressBar() {
     let size = this.player.track.currentTime * 100 / this.player.track.duration;
     this.player.progressBar.style.width = Math.round(size) + "%";
@@ -65,11 +62,13 @@ export class AlbumPlayerComponent implements OnInit {
     let playedSeconds = this.pad(Math.round(this.player.track.currentTime % 60));
     this.player.currentDuration.innerHTML = playedMinutes + ':' + playedSeconds;
   }
+
   endProgressBar() {
     this.player.currentDuration.innerHTML = '00.00';
     this.player.progressBar.style.width = '0px';
     window.clearInterval(this.player.updateTime);
   }
+
   updateTrack() {
     this.player.barSize = this.player.bar.offsetWidth;
     this.player.barSize = this.player.bar.offsetWidth;
@@ -77,6 +76,7 @@ export class AlbumPlayerComponent implements OnInit {
       this.setProgressBar();
     } else {
       this.endProgressBar();
+      this.nextTrack();
     }
     if (document.getElementById('audio') === null) {
       window.clearInterval(this.player.updateTime);
@@ -129,8 +129,8 @@ export class AlbumPlayerComponent implements OnInit {
     this.player.track.src = this.song.src;
   }
 
-  changeSong(event: any) {
-    this.song = event;
+  changeSong(song: any) {
+    this.song = song;
     this.player.track.src = this.song.src;
   }
 
@@ -139,4 +139,7 @@ export class AlbumPlayerComponent implements OnInit {
     this.song = null;
   }
 
+  toggleLyric() {
+    this.lyricHidden = !this.lyricHidden;
+  }
 }

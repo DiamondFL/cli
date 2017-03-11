@@ -4,7 +4,7 @@
     <p class="song-content-p"><a>Noo Phước Thịnh</a> ft <a>nhiều ca sĩ</a></p>
     <span class="song-content-sp"><img src="assets/images/ver4_09.png" width="12"/> 123.456</span>
   </div>
-  <app-audio-player [song]="song"></app-audio-player>
+  <app-audio-player *ngIf="song" [song]="song"></app-audio-player>
   <div class="player-song-tool">
     <div class="song-tool-item"><a><img src="assets/images/ver4_10.png" width="30"/></a></div>
     <div class="song-tool-item"><a><img src="assets/images/ver4_11.png" width="30"/></a></div>

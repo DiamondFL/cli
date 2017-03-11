@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {SONG} from "../../database/seeds/song";
-import {ALBUM} from "../../database/seeds/album";
+import {Component, OnInit} from '@angular/core';
 import {FEELING} from "../../database/seeds/feeling";
+import {KeengService} from "../../services/keeng.service";
+import {ActivatedRoute} from "@angular/router";
+import {IMAGE_DOMAIN} from "../../configs/app.config";
 
 @Component({
   selector: 'app-player',
@@ -9,16 +10,28 @@ import {FEELING} from "../../database/seeds/feeling";
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  song: any;
-  songs: any[];
-  albums: any[];
-  feelings: any[];
-  constructor() { }
+  song: any = null;
+  songs: any[] = null;
+  albums: any[] = null;
+  feelings: any[] = null;
+
+  constructor(private keengService: KeengService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    this.song = SONG[0];
-    this.songs = SONG;
-    this.albums = ALBUM;
+    let id: number = this.route.snapshot.params['id'];
+    this.keengService.songDetail(id)
+      .then(
+        data => {
+          console.log(data);
+          this.song = data.track;
+          this.songs = data.relatedTracks;
+          this.albums = data.hotAlbums;
+          for(let i in this.albums) {
+            this.albums[i].image = IMAGE_DOMAIN + JSON.parse(data.hotAlbums[i].images)[0]['origin'];
+          }
+        }
+      );
     this.feelings = FEELING;
   }
 }

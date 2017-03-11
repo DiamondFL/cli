@@ -189,38 +189,7 @@ h1,h2,h3,h4{font-size:14px;}
 	display:block;
 }
 .album-shadow{background: rgba(0, 0, 0, 0) url("../images/ver4_04.png") repeat scroll left top;position:absolute;bottom:0px;left:0px;width:100%;height:80px;display:none;}
-/*
-.keeng-album-info {
 
-    bottom: 0;
-    left: 0;
-    padding: 10px 16px;
-    position: absolute;
-	box-sizing: border-box;
-	width:100%;
-}
-.album-info-h3 {
-    margin-bottom: 3px;
-	 overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-	color: #ffffff;
-}
-.album-info-h3 a {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: normal;
-}
-.album-info-singer {
-    color: #c7c7c7;
-    display: block;
-    font-size: 14px;
-	overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.album-info-singer a{color: #c7c7c7;}
-*/
 
 .album-info-h3 {
     color: #1b1b1b;
@@ -228,13 +197,13 @@ h1,h2,h3,h4{font-size:14px;}
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-	    font-size: 16px;
+	    font-size: 14px;
     font-weight: normal;
 }
 
 .album-info-h3 a {
     color: #1b1b1b;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
 }
 
@@ -292,7 +261,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .song-info-h3 a {
     color: #1b1b1b;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
 }
 .playing .song-info-h3 a{color:#7AAF14;font-weight:bold;}
@@ -329,7 +298,7 @@ h1,h2,h3,h4{font-size:14px;}
     text-overflow: ellipsis;
     white-space: nowrap;color: #1b1b1b;}
 			.video-info-h3 a{  color: #1b1b1b;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;}
 	.video-info-singer{color: #9e9e9e;overflow: hidden;
     text-overflow: ellipsis;
@@ -449,7 +418,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .song-content-h3 {
     color: #7aaf14;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     margin-bottom: 5px;
 }
@@ -483,7 +452,7 @@ h1,h2,h3,h4{font-size:14px;}
     display: block;
 }
 .keeng-song-lyric{margin-bottom:15px;}
-		.song-lyric-content{text-align:center;}
+		.song-lyric-content{text-align:center;font-size: 13px}
 .keeng-feel {
 	margin-bottom:20px;
 }
@@ -515,7 +484,7 @@ h1,h2,h3,h4{font-size:14px;}
     margin-left: 70px;
 }
 .feel-info-h3 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 2px;
 }
 .feel-info-h3 a {
@@ -524,7 +493,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .feel-info-content {
     color: #000000;
-    font-size: 16px;
+    font-size: 14px;
 }
 .feel-info-time {
     color: #9e9e9e;
@@ -535,7 +504,7 @@ h1,h2,h3,h4{font-size:14px;}
 .player-video-playing{background:#000000;margin-bottom:10px;}
 .player-video-playing video{width:100%;}
 .player-video-info{padding:0px 12px;margin-bottom:10px;}
-.video-info-h3{font-size:#1b1b1b;font-size:16px;font-weight:normal;}
+.video-info-h3{font-size:#1b1b1b;font-size:14px;font-weight:normal;}
 .video-info-p{font-size:14px;color:#9e9e9e;position:relative;}
 .video-info-p a{font-size:14px;color:#9e9e9e}
 .video-info-p .video-info-view{position:absolute;right:0px;}
@@ -583,7 +552,7 @@ h1,h2,h3,h4{font-size:14px;}
 .keeng-bxh-video .keeng-song-img{height:55px;width:97px;overflow:hidden;}
 .keeng-bxh-video .keeng-song-img img{}
 .keeng-bxh-video .keeng-song-info{margin-left:150px;}
-.keeng-bxh-video .keeng-song-item strong{margin-top:16px;}
+.keeng-bxh-video .keeng-song-item strong{margin-top:14px;}
 .keeng-menu-wrap {background: #f3f3f3 none repeat scroll 0 0;box-sizing: border-box;padding: 15px;position: absolute;top: 55px;width: 100%;z-index: 99999!important;}
 .keeng-menu-user {
     margin-bottom: 15px;
@@ -619,7 +588,7 @@ h1,h2,h3,h4{font-size:14px;}
     border-radius: 5px;
     display: inline-block;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
     height: 30px;
     line-height: 30px;
     margin-bottom: 12px;
@@ -668,7 +637,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .close-popup {
     color: #333333;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px;
     position: absolute;
     right: 5px;
@@ -738,7 +707,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .top-singer-h3 a {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
 }
 .bg_player{height: 100%; position: absolute; width: 100%; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.6) none repeat scroll 0px 0px;}
@@ -851,7 +820,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .div-sub-child .lnk-img {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
 }
 .inline-td {
@@ -971,7 +940,7 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .kv-info .kv-info-h3 {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     margin-bottom: 2px;
     padding: 0 10px;
@@ -1037,7 +1006,7 @@ h1,h2,h3,h4{font-size:14px;}
     margin-left: 90px;
 }
 .ka-info .ka-info-h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     margin-bottom: 5px;
     overflow: hidden;
@@ -1106,7 +1075,7 @@ h1,h2,h3,h4{font-size:14px;}
     margin-top: 2px;
 }
 .ka-info .ka-info-h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     margin-bottom: 5px;
     overflow: hidden;
@@ -1180,14 +1149,14 @@ h1,h2,h3,h4{font-size:14px;}
 }
 .popup-sub .close-mocha {
     background: #ffffff none repeat scroll 0 0;
-    border-radius: 16px;
+    border-radius: 14px;
     color: #222222;
     font-size: 17px;
     height: 30px;
     line-height: 26px;
     opacity: 0.9;
     position: absolute;
-    right: 16px;
+    right: 14px;
     text-align: center;
     top: 17px;
     width: 30px;

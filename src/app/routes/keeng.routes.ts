@@ -46,7 +46,7 @@ const routes: Routes = [
     path: 'list-video', component: ListVideoComponent
   },
   {
-    path: 'player', component: PlayerComponent
+    path: ':slug/:id/song-player.html', component: PlayerComponent
   },
   {
     path: ':slug/:id/player-album.html', component: PlayerAlbumComponent
@@ -58,7 +58,7 @@ const routes: Routes = [
     path: 'player-livetv', component: PlayerLivetvComponent
   },
   {
-    path: ':id/video-player.html', component: PlayerVideoComponent
+    path: ':slug/:id/video-player.html', component: PlayerVideoComponent
   },
   {
     path: 'popup-login', component: PopupLoginComponent
